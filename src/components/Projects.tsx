@@ -50,7 +50,7 @@ const projects = [
     image:"assets/wallpaper2.jpeg",
     tags: ["C", "C++", "JavaScript", "HTML", "CSS", "Typescript", "React", "Assembleur", "Cybersecurity", "Data Analysis", "Game Development", "Web Development"],
     featured: false,
-    github: "#",
+    github: "https://github.com/Krokmouuu",
     live: "#",
   },
 ];

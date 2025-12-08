@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  "About",
+  "À propos",
   "Skills",
   "Experience",
-  "Projects",
+  "Mes Projets",
   "Services",
   "Contact",
 ];

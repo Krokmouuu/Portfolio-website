@@ -74,7 +74,7 @@ export function Projects() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Mes projets
+              Mes Projets
             </span>
           </h2>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-lime-400 to-cyan-400 rounded-full" />

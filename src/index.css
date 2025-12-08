@@ -2,19 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import './styles/globals.css';
-
-*,
-*::before,
-*::after {
-  cursor: none !important;
-}
+@import "./styles/globals.css";
 
 html {
   scroll-behavior: smooth;
-}
-
-html,
-body {
-  cursor: none !important;
 }

@@ -7,7 +7,6 @@ import { Projects } from './components/Projects';
 import { Services } from './components/Services';
 import { Contact } from './components/Contact';
 import { ParticleBackground } from './components/ParticleBackground';
-import { CustomCursor } from './components/CustomCursor';
 import { Navigation } from './components/Navigation';
 
 export default function App() {
@@ -40,7 +39,6 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-x-hidden">
-      <CustomCursor />
       <ParticleBackground />
       <Navigation />
       

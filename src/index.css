@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/globals.css';
+
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  cursor: none !important;
+}

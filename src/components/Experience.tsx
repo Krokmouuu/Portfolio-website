@@ -102,12 +102,12 @@ const experiences = [
     ],
   },
   {
-    title: "Joueur professionnel de jeu vidéo",
+    title: "Joueur semi-professionnel de jeu vidéo",
     company: "",
     location: "Online",
     period: "2016 - 2024",
     description:
-      "Grand passionné de jeux vidéo, j'ai participé à des centaines de tournois compétitifs sur 6 jeux différents, développant ainsi des compétences en stratégie, analyse, travail d'équipe, leadership en tant que capitaine, prise de décision rapide et adaptation.",
+      "Grand passionné de jeux vidéo, j'ai participé à des centaines de tournois compétitifs sur 6 jeux différents allant de la division 2 à la division 1, développant ainsi des compétences en stratégie, analyse, travail d'équipe, leadership en tant que capitaine, prise de décision rapide et adaptation.",
     image: "assets/pro-scene.png",
     tags: [
       "Counter-Strike: Global Offensive",
@@ -194,7 +194,7 @@ export function Experience() {
                       style={
                         exp.company === "Arc Cycle"
                           ? { objectPosition: "center 57%" }
-                          : exp.title === "Joueur professionnel de jeu vidéo"
+                          : exp.title === "Joueur semi-professionnel de jeu vidéo"
                           ? { objectPosition: "center 55%" }
                           : exp.company === "MNGRS.AI"
                           ? { objectPosition: "center 65%" }

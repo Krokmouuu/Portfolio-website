@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { Code, Smartphone, Cloud, Palette, Database, Zap } from "lucide-react";
 
 const services = [
@@ -77,12 +77,12 @@ export function Services() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <motion.div
               key={service.title}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
               className="relative group"

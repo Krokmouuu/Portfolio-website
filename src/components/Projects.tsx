@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import { ExternalLink, Github, Star } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Apple, ExternalLink, Github, Star } from "lucide-react";
+import { ImageWithFallback } from "./fallback/ImageWithFallback";
 
 const projects = [
   {
@@ -22,6 +22,8 @@ const projects = [
     featured: true,
     github: "https://github.com/Krokmouuu/ArcCycle-Frontend",
     live: "https://arc-cycle.app/",
+    apple:
+      "https://apps.apple.com/us/app/arc-cycle-build-discipline/id6755734026",
   },
   {
     title: "L'inattendu",
@@ -46,9 +48,22 @@ const projects = [
   {
     title: "Apprendre",
     description:
-      "J'adore apprendre : j'ai testé la data analyse, des jeux 2D, 3D, et tout ce qui me tombe sous la main. Fouillez mon GitHub, même si 90 % de mes projets sont en privé ou sous licence, il reste quelques pépites de mes débuts à explorer.",
-    image:"assets/wallpaper2.jpeg",
-    tags: ["C", "C++", "JavaScript", "HTML", "CSS", "Typescript", "React", "Assembleur", "Cybersecurity", "Data Analysis", "Game Development", "Web Development"],
+      "J'adore apprendre : j'ai testé la data analyse, des jeux 2D, 3D, des arbres binaires, des algorithmes de tri et tout ce qui me tombe sous la main. Fouillez mon GitHub, même si 90 % de mes projets sont en privé ou sous licence, il reste quelques pépites de mes débuts à explorer.",
+    image: "assets/wallpaper2.jpeg",
+    tags: [
+      "C",
+      "C++",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Typescript",
+      "React",
+      "Assembleur",
+      "Cybersecurity",
+      "Data Analysis",
+      "Game Development",
+      "Web Development",
+    ],
     featured: false,
     github: "https://github.com/Krokmouuu",
     live: "#",
@@ -149,6 +164,18 @@ export function Projects() {
                     >
                       <ExternalLink size={24} />
                     </motion.a>
+                    {project.title === "Arc Cycle" && (
+                      <motion.a
+                        href={project.apple}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                      >
+                        <Apple size={24} />
+                      </motion.a>
+                    )}
                   </div>
                 </div>
 

@@ -74,18 +74,6 @@ export function Contact() {
                 projet en tête ou une opportunité à discuter, n&apos;hésitez pas
                 à me contacter !
               </p>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center justify-center gap-3 text-white/70">
-                  <MapPin className="text-lime-400" size={20} />
-                  <span className="font-mono">France</span>
-                </div>
-                <div className="flex items-center justify-center gap-3 text-white/70">
-                  <Mail className="text-cyan-400" size={20} />
-                  <span className="font-mono">contact@bleroy.dev</span>
-                </div>
-              </div>
-
               <div className="flex items-center justify-center gap-2 text-lime-400 font-mono text-sm">
                 <div className="w-2 h-2 bg-lime-400 rounded-full animate-pulse" />
                 Disponible pour de nouveaux projets
@@ -95,7 +83,7 @@ export function Contact() {
         </div>
 
         <div className="grid md:grid-cols-4 gap-6">
-          {socialLinks.map((link, index) => (
+          {socialLinks.map((link) => (
             <motion.a
               key={link.name}
               href={link.url}
@@ -103,7 +91,7 @@ export function Contact() {
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.05 }}
               className="relative group"

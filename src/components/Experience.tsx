@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Calendar, MapPin } from "lucide-react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./fallback/ImageWithFallback";
 
 const experiences = [
   {
@@ -57,7 +57,7 @@ const experiences = [
       "Sentry",
       "Heroku",
       "PostgresSQL",
-      "figma",
+      "Figma",
       "Intelligence Artificielle",
     ],
   },
@@ -159,7 +159,7 @@ export function Experience() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8 }}
               className={`relative mb-20 md:mb-32 ${
                 index % 2 === 0 ? "md:pr-1/2" : "md:pl-1/2 md:ml-auto"
               } md:w-1/2`}
@@ -193,9 +193,11 @@ export function Experience() {
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       style={
                         exp.company === "Arc Cycle"
-                          ? { objectPosition: "center 55%" }
+                          ? { objectPosition: "center 57%" }
                           : exp.title === "Joueur professionnel de jeu vidéo"
                           ? { objectPosition: "center 55%" }
+                          : exp.company === "MNGRS.AI"
+                          ? { objectPosition: "center 65%" }
                           : undefined
                       }
                     />

@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { Terminal, Zap, Trophy } from "lucide-react";
 const japanImage = "/assets/image.png";
 
@@ -56,7 +56,8 @@ export function About() {
               <span className="text-lime-400">const</span> developer = {"{"}{" "}
               <br />
               <span className="ml-4 text-cyan-400">name:</span>{" "}
-              <span className="text-fuchsia-400">&quot;Leroy Benoit&quot;</span>,<br />
+              <span className="text-fuchsia-400">&quot;Leroy Benoit&quot;</span>
+              ,<br />
               <span className="ml-4 text-cyan-400">passion:</span>{" "}
               <span className="text-fuchsia-400">&quot;code&quot;</span>,<br />
               <span className="ml-4 text-cyan-400">mission:</span>{" "}
@@ -65,7 +66,6 @@ export function About() {
               <span className="ml-4 text-cyan-400">goal:</span>{" "}
               <span className="text-fuchsia-400">&quot;excellence&quot;</span>
               <br />
-
               {"}"};
             </p>
             <p className="text-white/60 mb-6 leading-relaxed">

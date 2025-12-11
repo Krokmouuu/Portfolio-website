@@ -16,30 +16,30 @@ import {
 import { useState } from "react";
 
 const primarySkillsData = [
-  { name: "JavaScript", color: "from-amber-400 to-orange-500" },
-  { name: "C", color: "from-emerald-400 to-green-600" },
-  { name: "C++", color: "from-cyan-400 to-sky-500" },
-  { name: "Python", color: "from-blue-400 to-indigo-500" },
-  { name: "Django", color: "from-green-400 to-lime-500" },
-  { name: "React", color: "from-teal-400 to-cyan-500" },
   { name: "React Native", color: "from-teal-300 to-cyan-400" },
-  { name: "Svelte", color: "from-amber-300 to-orange-500" },
+  { name: "TypeScript", color: "from-blue-400 to-indigo-500" },
+  { name: "React", color: "from-teal-400 to-cyan-500" },
   { name: "HTML/CSS", color: "from-red-400 to-orange-500" },
   { name: "Tailwind CSS", color: "from-cyan-400 to-sky-500" },
-  { name: "TypeScript", color: "from-blue-400 to-indigo-500" },
+  { name: "Svelte", color: "from-amber-300 to-orange-500" },
+  { name: "Python", color: "from-blue-400 to-indigo-500" },
+  { name: "Django", color: "from-green-400 to-lime-500" },
+  { name: "C++", color: "from-cyan-400 to-sky-500" },
+  { name: "C", color: "from-emerald-400 to-green-600" },
   { name: "Swift", color: "from-rose-400 to-pink-500" },
   { name: "PostgreSQL", color: "from-sky-400 to-blue-500" },
   { name: "DevOps", color: "from-lime-400 to-emerald-500" },
+  { name: "JavaScript", color: "from-amber-400 to-orange-500" },
 ];
 
 const secondarySkills = [
-  { name: "Algorithmique", color: "from-fuchsia-300 to-purple-400" },
-  { name: "Optimisation", color: "from-lime-300 to-emerald-400" },
   { name: "Créativité", color: "from-pink-300 to-rose-400" },
   { name: "Résolution de problèmes", color: "from-indigo-300 to-purple-400" },
-  { name: "Travail en équipe", color: "from-green-200 to-emerald-400" },
   { name: "Communication", color: "from-cyan-200 to-blue-400" },
+  { name: "Optimisation", color: "from-lime-300 to-emerald-400" },
+  { name: "Algorithmique", color: "from-fuchsia-300 to-purple-400" },
   { name: "Adaptabilité", color: "from-purple-200 to-fuchsia-400" },
+  { name: "Travail en équipe", color: "from-green-200 to-emerald-400" },
 ];
 
 const toolCategories = [

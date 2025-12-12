@@ -172,7 +172,7 @@ export function Skills() {
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -2 }}
-              className="relative group cursor-pointer"
+              className="relative group"
             >
               <div
                 className={`absolute -inset-0.5 bg-gradient-to-r ${skill.color} rounded-lg blur opacity-40 group-hover:opacity-100 transition duration-300`}
@@ -211,7 +211,7 @@ export function Skills() {
               transition={{ duration: 0.4 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05, y: -2 }}
-              className="relative group cursor-pointer"
+              className="relative group"
             >
               <div
                 className={`absolute -inset-0.5 bg-gradient-to-r ${skill.color} rounded-lg blur opacity-30 group-hover:opacity-70 transition duration-300`}
@@ -267,7 +267,7 @@ export function Skills() {
                         ease: "easeOut",
                       }}
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="relative group cursor-pointer"
+                      className="relative group"
                     >
                       <div
                         className={`absolute -inset-0.5 bg-gradient-to-r ${tool.color} rounded-xl blur opacity-40 group-hover:opacity-100 transition duration-300`}

@@ -35,7 +35,12 @@ export function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="text-2xl font-mono bg-gradient-to-r from-lime-400 to-cyan-400 bg-clip-text text-transparent">
+        <div
+          className="text-2xl font-mono bg-gradient-to-r from-lime-400 to-cyan-400 bg-clip-text text-transparent cursor-pointer"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           {"<Dev />"}
         </div>
 

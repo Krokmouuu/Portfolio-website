@@ -50,7 +50,7 @@ export function Hero() {
           <span className="text-lime-400 font-mono text-sm tracking-wider">
             FULL-STACK DEVELOPER
           </span>
-          <Sparkles className="text-cyan-400" size={24} />
+          <Sparkles className="text-lime-400" size={24} />
         </motion.div>
 
         <motion.h1
@@ -84,8 +84,14 @@ export function Hero() {
           className="flex gap-4 justify-center flex-wrap"
         >
           <a
-            href="#projects"
-            className="group relative px-8 py-4 bg-lime-400 text-black rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(163,230,53,0.5)]"
+            onClick={(e) => {
+              e.preventDefault();
+              const element = document.getElementById("mes projets");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth", block: "start" });
+              }
+            }}
+            className="group relative px-8 py-4 bg-lime-400 text-black rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] cursor-pointer"
           >
             <span className="relative z-10 font-mono">Voir mes projets</span>
             <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />

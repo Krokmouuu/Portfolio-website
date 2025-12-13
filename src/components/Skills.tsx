@@ -47,8 +47,18 @@ const toolCategories = [
     category: "DevOps",
     color: "from-lime-400 to-cyan-500",
     tools: [
-      { name: "Vercel", icon: Triangle, color: "from-lime-400 to-cyan-500" },
-      { name: "Heroku", icon: Cloud, color: "from-violet-400 to-purple-500" },
+      {
+        name: "Vercel",
+        icon: Triangle,
+        color: "from-lime-400 to-cyan-500",
+        colorHex: "#84F4C3",
+      },
+      {
+        name: "Heroku",
+        icon: Cloud,
+        color: "from-violet-400 to-purple-500",
+        colorHex: "#9F7AE0",
+      },
     ],
   },
   {
@@ -59,18 +69,27 @@ const toolCategories = [
         name: "Supabase",
         icon: Rocket,
         color: "from-emerald-400 to-green-500",
+        colorHex: "#22C55E",
       },
       {
         name: "Firebase",
         icon: Flame,
         color: "from-[#FFCA28] to-[#FFA000]",
+        colorHex: "#FFB300",
       },
     ],
   },
   {
     category: "Design",
     color: "from-pink-400 to-rose-500",
-    tools: [{ name: "Figma", icon: Figma, color: "from-pink-400 to-rose-500" }],
+    tools: [
+      {
+        name: "Figma",
+        icon: Figma,
+        color: "from-pink-400 to-rose-500",
+        colorHex: "#F472B6",
+      },
+    ],
   },
   {
     category: "Analytics",
@@ -80,16 +99,19 @@ const toolCategories = [
         name: "Mixpanel",
         icon: BarChart3,
         color: "from-[#8358FF] to-[#6F4CF4]",
+        colorHex: "#774DFA",
       },
       {
         name: "Sentry",
         icon: Search,
         color: "from-[#FF2D20] to-[#C51612]",
+        colorHex: "#FF2D20",
       },
       {
         name: "RevenueCat",
         icon: PieChart,
         color: "from-[#6A2FF9] to-[#A566FF]",
+        colorHex: "#8B49FF",
       },
     ],
   },
@@ -101,21 +123,25 @@ const toolCategories = [
         name: "Slack",
         icon: MessageSquare,
         color: "from-fuchsia-400 to-pink-500",
+        colorHex: "#D946EF",
       },
       {
         name: "Notion",
         icon: FileText,
         color: "from-slate-400 to-gray-500",
+        colorHex: "#94A3B8",
       },
       {
         name: "Discord",
         icon: MessageCircle,
         color: "from-[#5865F2] to-[#4752C4]",
+        colorHex: "#5865F2",
       },
       {
         name: "Teams",
         icon: Users,
         color: "from-[#464EB8] to-[#3A3F9F]",
+        colorHex: "#464EB8",
       },
     ],
   },
@@ -273,7 +299,10 @@ export function Skills() {
                         className={`absolute -inset-0.5 bg-gradient-to-r ${tool.color} rounded-xl blur opacity-40 group-hover:opacity-100 transition duration-300`}
                       />
                       <div className="relative bg-black border border-white/10 rounded-xl p-6 text-center hover:border-white/30 transition duration-300 w-36">
-                        <Icon className="w-10 h-10 mx-auto mb-2 text-lime-400" />
+                        <Icon
+                          className="w-10 h-10 mx-auto mb-2"
+                          stroke={tool.colorHex}
+                        />
                         <div className="text-white/80 font-mono text-sm">
                           {tool.name}
                         </div>

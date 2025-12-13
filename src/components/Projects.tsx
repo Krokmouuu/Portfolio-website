@@ -72,7 +72,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="relative py-32 px-4">
+    <section id="mes projets" className="relative py-32 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}

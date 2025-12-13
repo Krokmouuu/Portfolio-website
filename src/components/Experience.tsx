@@ -63,7 +63,7 @@ const experiences = [
   },
   {
     title: "Consultant / Développeur",
-    company: "Cleeven",
+    company: "",
     location: "Sophia-Antipolis, France",
     period: "2023 - 2024",
     description:

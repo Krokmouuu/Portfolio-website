@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { ParticleBackground } from "./ParticleBackground";
 import { Button } from "./ui/button";
 
@@ -266,7 +266,7 @@ export function NotFound() {
 
       <div className="relative z-10 text-center px-4">
         <h1 className="text-8xl md:text-9xl font-bold mb-4 bg-gradient-to-r from-lime-400 via-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">
-        {"<404 />"}
+          {"<404 />"}
         </h1>
 
         <p className="text-2xl md:text-3xl mb-16 mt-10 text-white/90 font-mono">

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
@@ -10,6 +10,7 @@ import { Contact } from "./components/Contact";
 import { ParticleBackground } from "./components/ParticleBackground";
 import { Navigation } from "./components/Navigation";
 import { NotFound } from "./components/NotFound";
+import { Capybara } from "./components/Capybara";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -39,32 +40,50 @@ export default function App() {
     );
   }
 
-  const HomePage = () => (
-    <div className="relative min-h-screen bg-black text-white overflow-x-hidden">
-      <ParticleBackground />
-      <Navigation />
+  const HomePage = () => {
+    const navigate = useNavigate();
 
-      <div className="relative z-10">
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Services />
-        <Contact />
-      </div>
+    return (
+      <div className="relative min-h-screen bg-black text-white overflow-x-hidden">
+        <ParticleBackground />
+        <Navigation />
 
-      <footer className="relative z-10 text-center py-8 border-t border-lime-400/20">
-        <div className="text-lime-400/60 font-mono">
-          © 2025 - Crafted with ⚡
+        <div className="relative z-10">
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Services />
+          <Contact />
         </div>
-      </footer>
-    </div>
-  );
+
+        <footer className="relative z-10 py-8 border-t border-lime-400/20">
+          <div className="max-w-7xl mx-auto px-4 flex items-center justify-center">
+            <div className="text-lime-400/60 font-mono text-center flex items-center gap-2">
+              © 2025 - Crafted with{" "}
+              <button
+                onClick={() => navigate("/capybara")}
+                className="hover:scale-110 transition-all duration-300 cursor-pointer"
+                aria-label="Go to Capybara"
+              >
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/044/835/657/small/orange-fresh-fruit-png.png"
+                  alt="Orange"
+                  className="w-4 h-4 inline-block"
+                />
+              </button>
+            </div>
+          </div>
+        </footer>
+      </div>
+    );
+  };
 
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/capybara" element={<Capybara />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

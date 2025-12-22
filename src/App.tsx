@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Skills } from './components/Skills';
-import { Experience } from './components/Experience';
-import { Projects } from './components/Projects';
-import { Services } from './components/Services';
-import { Contact } from './components/Contact';
-import { ParticleBackground } from './components/ParticleBackground';
-import { Navigation } from './components/Navigation';
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Skills } from "./components/Skills";
+import { Experience } from "./components/Experience";
+import { Projects } from "./components/Projects";
+import { Services } from "./components/Services";
+import { Contact } from "./components/Contact";
+import { ParticleBackground } from "./components/ParticleBackground";
+import { Navigation } from "./components/Navigation";
+import { NotFound } from "./components/NotFound";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -37,11 +39,11 @@ export default function App() {
     );
   }
 
-  return (
+  const HomePage = () => (
     <div className="relative min-h-screen bg-black text-white overflow-x-hidden">
       <ParticleBackground />
       <Navigation />
-      
+
       <div className="relative z-10">
         <Hero />
         <About />
@@ -51,10 +53,19 @@ export default function App() {
         <Services />
         <Contact />
       </div>
-      
+
       <footer className="relative z-10 text-center py-8 border-t border-lime-400/20">
-        <div className="text-lime-400/60 font-mono">© 2025 - Crafted with ⚡</div>
+        <div className="text-lime-400/60 font-mono">
+          © 2025 - Crafted with ⚡
+        </div>
       </footer>
     </div>
+  );
+
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }

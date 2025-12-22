@@ -257,7 +257,7 @@ export function NotFound() {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-x-hidden flex items-center justify-center">
+    <div className="relative h-screen w-screen bg-black text-white overflow-hidden flex items-center justify-center">
       <ParticleBackground />
 
       {capybaraImages.map((src, index) => (
@@ -269,7 +269,7 @@ export function NotFound() {
           {"<404 />"}
         </h1>
 
-        <p className="text-2xl md:text-3xl mb-16 mt-10 text-white/90 font-mono">
+        <p className="text-2xl md:text-3xl mb-8 mt-6 text-white/90 font-mono">
           Vous vous êtes perdu dans le web..
         </p>
 

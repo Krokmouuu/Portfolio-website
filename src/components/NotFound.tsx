@@ -66,7 +66,7 @@ const generateCapybaraConfig = (
 
   const rotationSpeed = Math.random() * 15 + 10;
   const travelSpeed = Math.random() * 8 + 12;
-  const delay = Math.random() * 2;
+  const delay = 0;
 
   return {
     startX: `${startX}px`,

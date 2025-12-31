@@ -36,6 +36,16 @@ const projects = [
     live: "https://www.linattendu-love-room.fr/",
   },
   {
+    title: "Aquapro",
+    description:
+      "Site web professionnel pour un plombier à Montpellier, conçu pour mettre en valeur les services et faciliter la prise de contact. L'interface moderne et responsive présente les différentes prestations (plomberie, chauffage, dépannage d'urgence), les informations de contact et permet aux clients de contacter facilement l'entreprise pour leurs besoins.",
+    image: "assets/aquapro.png",
+    tags: ["TypeScript", "React", "TailwindCSS"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/aquapro",
+    live: "https://aquapro-entcj40ks-bleroy.vercel.app/",
+  },
+  {
     title: "Bouncing Balls",
     description:
       "Vous connaissez ces balles rebondissantes qui envahissent TikTok et qui rendent les gens accros ? Eh bien, j'ai décidé de recréer ce petit phénomène en un week-end. Résultat : des heures perdues à regarder des balles rebondir, mais au moins c'est moi qui les ai codées ! Peut-être qu'on ira plus loin... ou peut-être pas, qui sait ?",

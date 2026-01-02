@@ -19,6 +19,10 @@ export default function App() {
     setTimeout(() => setLoading(false), 2000);
   }, []);
 
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  };
+
   if (loading) {
     return (
       <div className="fixed inset-0 bg-black flex items-center justify-center">
@@ -61,7 +65,7 @@ export default function App() {
         <footer className="relative z-10 py-8 border-t border-lime-400/20">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-center">
             <div className="text-lime-400/60 font-mono text-center flex items-center gap-2">
-              © 2025 - Crafted with{" "}
+              © {getCurrentYear()} - Crafted with{" "}
               <button
                 onClick={() => navigate("/capybara")}
                 className="hover:scale-110 transition-all duration-300 cursor-pointer"

@@ -30,7 +30,7 @@ const projects = [
     description:
       "Site pour une Loveroom avec gestion de réservations avec un système automatisé d'envoi d'emails. Conçue pour simplifier la réservation d'espaces, elle offre une expérience utilisateur fluide avec notifications en temps réel et confirmations automatiques par email.",
     image: "assets/l'inattendu.png",
-    tags: ["TypeScript", "React", "TailwindCSS"],
+    tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite"],
     featured: false,
     github: "https://github.com/Krokmouuu/Linattendu",
     live: "https://www.linattendu-love-room.fr/",
@@ -40,10 +40,32 @@ const projects = [
     description:
       "Site web professionnel pour un plombier à Montpellier, conçu pour mettre en valeur les services et faciliter la prise de contact. L'interface moderne et responsive présente les différentes prestations (plomberie, chauffage, dépannage d'urgence), les informations de contact et permet aux clients de contacter facilement l'entreprise pour leurs besoins.",
     image: "assets/aquapro.png",
-    tags: ["TypeScript", "React", "TailwindCSS"],
+    tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite"],
     featured: false,
     github: "https://github.com/Krokmouuu/aquapro",
-    live: "https://aquapro-entcj40ks-bleroy.vercel.app/",
+    live: "https://aquapro-psi.vercel.app/",
+  },
+  {
+    title: "Street Shop",
+    description:
+      "Site web vitrine et de commande de CBD pour passer commande de fleurs, huiles, résines, cosmétiques, infusions et e-liquides sur Nice. Une plateforme e-commerce moderne permettant aux clients de découvrir et commander facilement des produits CBD de qualité avec une expérience utilisateur fluide et sécurisée.",
+    image: "assets/streetshop.png",
+    tags: [
+      "TypeScript",
+      "React",
+      "TailwindCSS",
+      "Vercel",
+      "Vite",
+      "PostgreSQL",
+      "Stripe",
+      "Authentification",
+      "Node.js",
+      "Express",
+      "Docker",
+    ],
+    featured: false,
+    github: "https://github.com/Krokmouuu/StreetShop",
+    live: "https://street-shop-alpha.vercel.app/",
   },
   {
     title: "Bouncing Balls",
@@ -147,6 +169,10 @@ export function Projects() {
                       project.title === "Arc Cycle"
                         ? {
                             objectPosition: "center 55%",
+                          }
+                        : project.title === "Street Shop"
+                        ? {
+                            objectPosition: "center 0%",
                           }
                         : undefined
                     }

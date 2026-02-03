@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { Terminal, Zap, Trophy } from "lucide-react";
-const japanImage = "/assets/image.png";
+const japanImage = "/assets/about-image.jpg";
 
 const stats = [
-  { icon: Terminal, value: "12", label: "Projets réalisés" },
+  { icon: Terminal, value: "14", label: "Projets réalisés" },
   { icon: Zap, value: "3", label: "Années d'expérience" },
-  { icon: Trophy, value: "12", label: "Clients satisfaits" },
+  { icon: Trophy, value: "14", label: "Clients satisfaits" },
 ];
 
 export function About() {

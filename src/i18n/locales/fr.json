@@ -74,6 +74,9 @@
     "arcCycle": {
       "description": "Arc Cycle est une application mobile React Native conçue pour vous aider à développer votre discipline personnelle à travers un système de cycles (arcs) progressifs, de défis quotidiens et de suivi d'habitudes."
     },
+    "estateUp": {
+      "description": "Améliorez vos photos immobilières en 3 clics : home staging virtuel, ciel bleu, retouches... Ultra simple à utiliser et un rendu ultra réaliste. Sublimez vos annonces en quelques secondes grâce à l'IA."
+    },
     "linattendu": {
       "description": "Site pour une Loveroom avec gestion de réservations avec un système automatisé d'envoi d'emails. Conçue pour simplifier la réservation d'espaces, elle offre une expérience utilisateur fluide avec notifications en temps réel et confirmations automatiques par email."
     },

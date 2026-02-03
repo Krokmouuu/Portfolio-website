@@ -2,8 +2,176 @@ import { motion } from "motion/react";
 import { Apple, ExternalLink, Github, Star } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { useTranslation } from "react-i18next";
+import { useRef } from "react";
 
-const projectsData = [
+interface Project {
+  title?: string;
+  titleKey?: string;
+  descriptionKey: string;
+  image?: string;
+  video?: string;
+  tags: string[];
+  featured?: boolean;
+  github?: string;
+  live?: string;
+  apple?: string;
+}
+
+function ProjectCard({
+  project,
+  projectTitle,
+  index,
+  hasLinks,
+  t,
+}: {
+  project: Project;
+  projectTitle: string;
+  index: number;
+  hasLinks: boolean;
+  t: (key: string) => string;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.9 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="relative group"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      {project.featured && (
+        <motion.div
+          initial={{ rotate: -45, scale: 0 }}
+          whileInView={{ rotate: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ type: "spring", delay: 0.5 }}
+          className="absolute -top-4 -right-4 z-20"
+        >
+          <div className="relative">
+            <div className="absolute inset-0 blur-xl bg-yellow-400 opacity-75" />
+            <div className="relative bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full p-3 border-4 border-black">
+              <Star className="w-6 h-6 text-white fill-white" />
+            </div>
+          </div>
+        </motion.div>
+      )}
+
+      <motion.div
+        whileHover={{ y: -10 }}
+        className="relative h-full overflow-hidden rounded-2xl backdrop-blur-xl bg-black/30 border border-lime-400/20 group-hover:border-lime-400/40 transition-all"
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+
+        <div className="relative h-64 overflow-hidden">
+          {project.video ? (
+            <video
+              ref={videoRef}
+              src={project.video}
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              style={{ objectPosition: "center 70%" }}
+            />
+          ) : (
+            <ImageWithFallback
+              src={project.image || ""}
+              alt={projectTitle}
+              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              style={
+                project.title === "Arc Cycle"
+                  ? { objectPosition: "center 55%" }
+                  : project.title === "Street Shop"
+                  ? { objectPosition: "center 0%" }
+                  : undefined
+              }
+            />
+          )}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+          {hasLinks && (
+            <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              {project.github && (
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                >
+                  <Github size={24} />
+                </motion.a>
+              )}
+              {project.live && (
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                >
+                  <ExternalLink size={24} />
+                </motion.a>
+              )}
+              {project.apple && (
+                <motion.a
+                  href={project.apple}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                >
+                  <Apple size={24} />
+                </motion.a>
+              )}
+            </div>
+          )}
+        </div>
+
+        <div className="relative p-6">
+          <h3 className="text-2xl mb-3">{projectTitle}</h3>
+          <p className="text-gray-300 mb-4">
+            {t(`projects.${project.descriptionKey}.description`)}
+          </p>
+
+          <div className="flex flex-wrap gap-2">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="px-3 py-1 rounded-full bg-gradient-to-r from-lime-400/20 to-cyan-400/20 text-lime-400 border border-lime-400/30 text-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-lime-400/20 to-transparent transform translate-x-8 -translate-y-8 rotate-45" />
+      </motion.div>
+    </motion.div>
+  );
+}
+
+const projectsData: Project[] = [
   {
     title: "Arc Cycle",
     descriptionKey: "arcCycle",
@@ -24,6 +192,28 @@ const projectsData = [
     live: "https://arc-cycle.app/",
     apple:
       "https://apps.apple.com/us/app/arc-cycle-build-discipline/id6755734026",
+  },
+  {
+    title: "EstateUp {Work in Progress}",
+    descriptionKey: "estateUp",
+    video: "assets/placeholder.mp4",
+    tags: [
+      "React",
+      "TypeScript",
+      "Sentry",
+      "Supabase",
+      "Mixpanel",
+      "Vercel",
+      "Vite",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Prisma",
+      "Python Django",
+      "API",
+      "Stripe",
+      "Authentication",
+    ],
+    featured: true,
   },
   {
     title: "L'inattendu",
@@ -126,112 +316,17 @@ export function Projects() {
         <div className="grid md:grid-cols-2 gap-8">
           {projectsData.map((project, index) => {
             const projectTitle = project.titleKey ? t(`projects.${project.titleKey}.title`) : project.title;
+            const hasLinks = !!(project.github || project.live || project.apple);
+            
             return (
-              <motion.div
+              <ProjectCard
                 key={projectTitle}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative group"
-              >
-                {project.featured && (
-                  <motion.div
-                    initial={{ rotate: -45, scale: 0 }}
-                    whileInView={{ rotate: 0, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ type: "spring", delay: 0.5 }}
-                    className="absolute -top-4 -right-4 z-20"
-                  >
-                    <div className="relative">
-                      <div className="absolute inset-0 blur-xl bg-yellow-400 opacity-75" />
-                      <div className="relative bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full p-3 border-4 border-black">
-                        <Star className="w-6 h-6 text-white fill-white" />
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-
-                <motion.div
-                  whileHover={{ y: -10 }}
-                  className="relative h-full overflow-hidden rounded-2xl backdrop-blur-xl bg-black/30 border border-lime-400/20 group-hover:border-lime-400/40 transition-all"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                  <div className="relative h-64 overflow-hidden">
-                    <ImageWithFallback
-                      src={project.image}
-                      alt={projectTitle || ""}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      style={
-                        project.title === "Arc Cycle"
-                          ? {
-                              objectPosition: "center 55%",
-                            }
-                          : project.title === "Street Shop"
-                          ? {
-                              objectPosition: "center 0%",
-                            }
-                          : undefined
-                      }
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
-
-                    <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                      >
-                        <Github size={24} />
-                      </motion.a>
-                      <motion.a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                      >
-                        <ExternalLink size={24} />
-                      </motion.a>
-                      {project.title === "Arc Cycle" && (
-                        <motion.a
-                          href={project.apple}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                          className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                        >
-                          <Apple size={24} />
-                        </motion.a>
-                      )}
-                    </div>
-                  </div>
-
-                  <div className="relative p-6">
-                    <h3 className="text-2xl mb-3">{projectTitle}</h3>
-                    <p className="text-gray-300 mb-4">{t(`projects.${project.descriptionKey}.description`)}</p>
-
-                    <div className="flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 rounded-full bg-gradient-to-r from-lime-400/20 to-cyan-400/20 text-lime-400 border border-lime-400/30 text-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-lime-400/20 to-transparent transform translate-x-8 -translate-y-8 rotate-45" />
-                </motion.div>
-              </motion.div>
+                project={project}
+                projectTitle={projectTitle || ""}
+                index={index}
+                hasLinks={hasLinks}
+                t={t}
+              />
             );
           })}
         </div>

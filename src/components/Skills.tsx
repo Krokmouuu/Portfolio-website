@@ -14,6 +14,7 @@ import {
   Flame,
 } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const primarySkillsData = [
   { name: "React Native", color: "from-teal-300 to-cyan-400" },
@@ -32,14 +33,14 @@ const primarySkillsData = [
   { name: "JavaScript", color: "from-amber-400 to-orange-500" },
 ];
 
-const secondarySkills = [
-  { name: "Créativité", color: "from-pink-300 to-rose-400" },
-  { name: "Résolution de problèmes", color: "from-indigo-300 to-purple-400" },
-  { name: "Communication", color: "from-cyan-200 to-blue-400" },
-  { name: "Optimisation", color: "from-lime-300 to-emerald-400" },
-  { name: "Algorithmique", color: "from-fuchsia-300 to-purple-400" },
-  { name: "Adaptabilité", color: "from-purple-200 to-fuchsia-400" },
-  { name: "Travail en équipe", color: "from-green-200 to-emerald-400" },
+const secondarySkillsData = [
+  { key: "creativity", color: "from-pink-300 to-rose-400" },
+  { key: "problemSolving", color: "from-indigo-300 to-purple-400" },
+  { key: "communication", color: "from-cyan-200 to-blue-400" },
+  { key: "optimization", color: "from-lime-300 to-emerald-400" },
+  { key: "algorithms", color: "from-fuchsia-300 to-purple-400" },
+  { key: "adaptability", color: "from-purple-200 to-fuchsia-400" },
+  { key: "teamwork", color: "from-green-200 to-emerald-400" },
 ];
 
 const toolCategories = [
@@ -149,20 +150,22 @@ const toolCategories = [
 
 const allTools = toolCategories.flatMap((c) => c.tools);
 
-const allCategories = [
-  {
-    category: "Tous",
-    color: "from-lime-400 to-emerald-500",
-    tools: allTools,
-  },
-  ...toolCategories,
-];
-
 export function Skills() {
-  const [selectedCategory, setSelectedCategory] = useState("Tous");
+  const { t } = useTranslation();
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  const allCategories = [
+    {
+      category: "all",
+      label: t("skills.all"),
+      color: "from-lime-400 to-emerald-500",
+      tools: allTools,
+    },
+    ...toolCategories.map((cat) => ({ ...cat, label: cat.category })),
+  ];
 
   const currentTools =
-    selectedCategory === "Tous"
+    selectedCategory === "all"
       ? allTools
       : toolCategories.find((cat) => cat.category === selectedCategory)
           ?.tools || [];
@@ -180,12 +183,12 @@ export function Skills() {
           <h2 className="text-5xl md:text-7xl mb-6 font-mono">
             <span className="text-lime-400">{"<"}</span>
             <span className="bg-gradient-to-r from-lime-400 via-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">
-              Skills
+              {t("skills.title")}
             </span>
             <span className="text-cyan-400">{" />"}</span>
           </h2>
           <p className="text-xl text-white/60 font-mono">
-            Technologies que je maîtrise
+            {t("skills.subtitle")}
           </p>
         </motion.div>
 
@@ -219,19 +222,19 @@ export function Skills() {
           <h2 className="text-5xl md:text-7xl mb-6 font-mono">
             <span className="text-lime-400">{"<"}</span>
             <span className="bg-gradient-to-r from-lime-400 via-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">
-              Skills secondaires
+              {t("skills.secondaryTitle")}
             </span>
             <span className="text-cyan-400">{" />"}</span>
           </h2>
           <p className="text-xl text-white/60 font-mono">
-            Compétences humaines
+            {t("skills.secondarySubtitle")}
           </p>
         </motion.div>
 
         <div className="flex flex-wrap gap-4 justify-center mb-16">
-          {secondarySkills.map((skill) => (
+          {secondarySkillsData.map((skill) => (
             <motion.div
-              key={skill.name}
+              key={skill.key}
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}
@@ -243,7 +246,7 @@ export function Skills() {
                 className={`absolute -inset-0.5 bg-gradient-to-r ${skill.color} rounded-lg blur opacity-30 group-hover:opacity-70 transition duration-300`}
               />
               <div className="relative bg-black border border-white/10 rounded-lg px-6 py-3 group-hover:border-white/30 transition duration-300">
-                <span className="text-white/80 font-mono">{skill.name}</span>
+                <span className="text-white/80 font-mono">{t(`skills.secondary.${skill.key}`)}</span>
               </div>
             </motion.div>
           ))}
@@ -259,7 +262,7 @@ export function Skills() {
           <div className="absolute -inset-1 bg-gradient-to-r from-lime-400 via-cyan-400 to-fuchsia-500 rounded-2xl blur opacity-20" />
           <div className="relative bg-black border border-lime-400/30 rounded-2xl p-8">
             <h3 className="text-3xl mb-8 text-center font-mono text-lime-400">
-              Outils & Plateformes
+              {t("skills.toolsTitle")}
             </h3>
 
             <div className="flex flex-wrap gap-3 justify-center mb-8">
@@ -273,7 +276,7 @@ export function Skills() {
                       : "bg-white/5 border border-white/10 text-white/60 hover:border-lime-400/40 hover:text-white/80"
                   }`}
                 >
-                  {category.category}
+                  {category.label}
                 </button>
               ))}
             </div>

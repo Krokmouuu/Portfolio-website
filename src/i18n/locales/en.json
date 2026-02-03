@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "My Projects",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "FULL-STACK DEVELOPER",
+    "tagline": "Transforming ideas into exceptional digital experiences",
+    "viewProjects": "View my projects",
+    "contactMe": "Contact me"
+  },
+  "about": {
+    "title": "About",
+    "description": "Passionate Full-Stack developer with expertise in creating modern web and mobile applications. I transform complex concepts into elegant and high-performance digital solutions.",
+    "stats": {
+      "projects": "Projects completed",
+      "experience": "Years of experience",
+      "clients": "Satisfied clients"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies I master",
+    "secondaryTitle": "Soft Skills",
+    "secondarySubtitle": "Human skills",
+    "toolsTitle": "Tools & Platforms",
+    "all": "All",
+    "secondary": {
+      "creativity": "Creativity",
+      "problemSolving": "Problem Solving",
+      "communication": "Communication",
+      "optimization": "Optimization",
+      "algorithms": "Algorithms",
+      "adaptability": "Adaptability",
+      "teamwork": "Teamwork"
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "currently": "Currently",
+    "jobs": {
+      "arcCycle": {
+        "title": "Founder & Developer",
+        "description": "Creation of a mobile application with habit tracking, random daily challenges, a motivating gamification system, and advanced statistics to track your progress."
+      },
+      "iLoveNice": {
+        "title": "Sales Associate",
+        "description": "Customer service in a souvenir shop. Sales management, payments and inventory tracking. Multilingual communication with international customers."
+      },
+      "mngrsAi": {
+        "title": "Full Stack Developer",
+        "description": "Contribution to the development of an innovative web platform using artificial intelligence to support music artists in their creative process and complete career management."
+      },
+      "consultant": {
+        "title": "Consultant / Developer",
+        "description": "Versatile consultant working on various projects: software development, web applications, technical solutions and DevOps infrastructure setup for different clients."
+      },
+      "freelance": {
+        "title": "Full Stack Freelance Developer",
+        "description": "Occasionally alongside my studies, I worked as a freelance developer for various clients, mainly showcase websites and personal e-commerce stores."
+      },
+      "gaming": {
+        "title": "Semi-professional Video Game Player",
+        "description": "Gaming enthusiast, I participated in hundreds of competitive tournaments across 6 different games from division 2 to division 1, developing skills in strategy, analysis, teamwork, leadership as captain, quick decision-making and adaptation."
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "arcCycle": {
+      "description": "Arc Cycle is a React Native mobile app designed to help you develop personal discipline through a system of progressive cycles (arcs), daily challenges, and habit tracking."
+    },
+    "linattendu": {
+      "description": "Website for a Loveroom with booking management and automated email system. Designed to simplify space booking, it offers a smooth user experience with real-time notifications and automatic email confirmations."
+    },
+    "aquapro": {
+      "description": "Professional website for a plumber in Montpellier, designed to showcase services and facilitate contact. The modern and responsive interface presents various services (plumbing, heating, emergency repairs), contact information and allows customers to easily reach the company for their needs."
+    },
+    "streetshop": {
+      "description": "CBD showcase and ordering website for flowers, oils, resins, cosmetics, infusions and e-liquids in Nice. A modern e-commerce platform allowing customers to discover and easily order quality CBD products with a smooth and secure user experience."
+    },
+    "bouncingBalls": {
+      "description": "You know those bouncing balls taking over TikTok that make people addicted? Well, I decided to recreate this little phenomenon over a weekend. Result: hours lost watching balls bounce, but at least I coded them myself! Maybe we'll go further... or maybe not, who knows?"
+    },
+    "learning": {
+      "title": "Learning",
+      "description": "I love learning: I've tried data analysis, 2D and 3D games, binary trees, sorting algorithms and everything I can get my hands on. Browse my GitHub, even though 90% of my projects are private or licensed, there are still some gems from my beginnings to explore."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "What I can do for you",
+    "webDev": {
+      "title": "Web Development",
+      "description": "Modern and high-performance web applications with React, TypeScript and Node.js"
+    },
+    "mobile": {
+      "title": "Mobile Applications",
+      "description": "Native iOS and Android apps with Swift and React Native"
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "Scalable cloud infrastructure with AWS, Vercel and Supabase"
+    },
+    "design": {
+      "title": "UI/UX Design",
+      "description": "Elegant and intuitive interfaces with Figma"
+    },
+    "database": {
+      "title": "Database",
+      "description": "PostgreSQL, MongoDB architecture and optimization"
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "Performance optimization and improvement"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's build something extraordinary together",
+    "getInTouch": "Get in touch",
+    "description": "I'm available for short or long-term job offers, as well as freelance missions. If you have a project in mind or an opportunity to discuss, don't hesitate to contact me!",
+    "available": "Available for new projects"
+  },
+  "footer": {
+    "craftedWith": "Crafted with"
+  }
+}

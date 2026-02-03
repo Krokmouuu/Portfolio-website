@@ -1,15 +1,15 @@
 import { motion } from "motion/react";
 import { Calendar, MapPin } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
+import { useTranslation } from "react-i18next";
 
-const experiences = [
+const experiencesData = [
   {
-    title: "Fondateur et Développeur",
+    titleKey: "arcCycle",
     company: "Arc Cycle",
     location: "Nice, France",
-    period: "2025 - Actuellement",
-    description:
-      "Création d'une application mobile avec un suivi d'habitudes, des défis quotidiens aléatoires, un système de gamification motivant, et des statistiques avancées pour suivre ta progression.",
+    period: "2025",
+    periodKey: "currently",
     image: "/assets/arc-cycle.png",
     tags: [
       "React Native",
@@ -24,12 +24,10 @@ const experiences = [
     ],
   },
   {
-    title: "Vendeur",
+    titleKey: "iLoveNice",
     company: "I ❤️ Nice",
     location: "Nice, France",
     period: "2025 - 2025",
-    description:
-      "Accueil et conseil clientèle dans un magasin de souvenirs. Gestion des ventes, encaissements et suivi de l'inventaire. Communication multilingue avec une clientèle internationale.",
     image: "/assets/nice.jpg",
     tags: [
       "Anglais",
@@ -42,12 +40,10 @@ const experiences = [
     ],
   },
   {
-    title: "Full Stack Developpeur",
+    titleKey: "mngrsAi",
     company: "MNGRS.AI",
     location: "Paris, France",
     period: "2024 - 2025",
-    description:
-      "Contribution au développement d'une plateforme web innovante utilisant l'intelligence artificielle pour accompagner les artistes musicaux dans leur processus de création et la gestion complète de leur carrière artistique.",
     image: "/assets/mngrs-ai.png",
     tags: [
       "React",
@@ -62,12 +58,10 @@ const experiences = [
     ],
   },
   {
-    title: "Consultant / Développeur",
+    titleKey: "consultant",
     company: "",
     location: "Sophia-Antipolis, France",
     period: "2023 - 2024",
-    description:
-      "Consultant polyvalent intervenant sur des projets variés : développement logiciel, applications web, solutions techniques et mise en place d'infrastructures DevOps pour différents clients.",
     image: "/assets/sophia-antipolis.jpg",
     tags: [
       "C",
@@ -80,12 +74,10 @@ const experiences = [
     ],
   },
   {
-    title: "Full Stack Developpeur Freelance",
+    titleKey: "freelance",
     company: "",
     location: "Nice, France",
     period: "2022 - 2024",
-    description:
-      "Occasionnellement en parallèle de mes études, j'ai travaillé comme développeur freelance pour différents clients, principalement des sites vitrines et des boutiques e-commerce personnelles.",
     image: "/assets/wallpaper.jpeg",
     tags: [
       "Python",
@@ -102,12 +94,10 @@ const experiences = [
     ],
   },
   {
-    title: "Joueur semi-professionnel de jeu vidéo",
+    titleKey: "gaming",
     company: "",
     location: "Online",
     period: "2016 - 2024",
-    description:
-      "Grand passionné de jeux vidéo, j'ai participé à des centaines de tournois compétitifs sur 6 jeux différents allant de la division 2 à la division 1, développant ainsi des compétences en stratégie, analyse, travail d'équipe, leadership en tant que capitaine, prise de décision rapide et adaptation.",
     image: "assets/pro-scene.png",
     tags: [
       "Counter-Strike: Global Offensive",
@@ -121,6 +111,7 @@ const experiences = [
 ];
 
 export function Experience() {
+  const { t } = useTranslation();
   return (
     <section id="experience" className="relative py-32 px-4 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -144,7 +135,7 @@ export function Experience() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Experience
+              {t("experience.title")}
             </span>
           </h2>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-lime-400 to-cyan-400 rounded-full" />
@@ -153,7 +144,7 @@ export function Experience() {
         <div className="relative">
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-lime-400 via-lime-400 to-cyan-400" />
 
-          {experiences.map((exp, index) => (
+          {experiencesData.map((exp, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -189,12 +180,12 @@ export function Experience() {
                   <div className="relative h-48 overflow-hidden">
                     <ImageWithFallback
                       src={exp.image}
-                      alt={exp.company || exp.title}
+                      alt={exp.company || t(`experience.jobs.${exp.titleKey}.title`)}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       style={
                         exp.company === "Arc Cycle"
                           ? { objectPosition: "center 57%" }
-                          : exp.title === "Joueur semi-professionnel de jeu vidéo"
+                          : exp.titleKey === "gaming"
                           ? { objectPosition: "center 55%" }
                           : exp.company === "MNGRS.AI"
                           ? { objectPosition: "center 65%" }
@@ -205,7 +196,7 @@ export function Experience() {
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-2xl mb-2">{exp.title}</h3>
+                    <h3 className="text-2xl mb-2">{t(`experience.jobs.${exp.titleKey}.title`)}</h3>
                     <div className="text-xl text-lime-400 mb-4">
                       {exp.company}
                     </div>
@@ -213,7 +204,7 @@ export function Experience() {
                     <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-400">
                       <div className="flex items-center gap-2">
                         <Calendar size={16} />
-                        <span>{exp.period}</span>
+                        <span>{exp.periodKey ? `${exp.period} - ${t(`experience.${exp.periodKey}`)}` : exp.period}</span>
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin size={16} />
@@ -221,7 +212,7 @@ export function Experience() {
                       </div>
                     </div>
 
-                    <p className="text-gray-300 mb-4">{exp.description}</p>
+                    <p className="text-gray-300 mb-4">{t(`experience.jobs.${exp.titleKey}.description`)}</p>
 
                     <div className="flex flex-wrap gap-2">
                       {exp.tags.map((tag) => (

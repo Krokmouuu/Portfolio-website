@@ -1,0 +1,132 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Skills",
+    "experience": "Expérience",
+    "projects": "Mes Projets",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "FULL-STACK DEVELOPER",
+    "tagline": "Transformant des idées en expériences digitales exceptionnelles",
+    "viewProjects": "Voir mes projets",
+    "contactMe": "Me contacter"
+  },
+  "about": {
+    "title": "À propos",
+    "description": "Développeur Full-Stack passionné avec une expertise dans la création d'applications web et mobiles modernes. Je transforme des concepts complexes en solutions digitales élégantes et performantes.",
+    "stats": {
+      "projects": "Projets réalisés",
+      "experience": "Années d'expérience",
+      "clients": "Clients satisfaits"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "subtitle": "Technologies que je maîtrise",
+    "secondaryTitle": "Skills secondaires",
+    "secondarySubtitle": "Compétences humaines",
+    "toolsTitle": "Outils & Plateformes",
+    "all": "Tous",
+    "secondary": {
+      "creativity": "Créativité",
+      "problemSolving": "Résolution de problèmes",
+      "communication": "Communication",
+      "optimization": "Optimisation",
+      "algorithms": "Algorithmique",
+      "adaptability": "Adaptabilité",
+      "teamwork": "Travail en équipe"
+    }
+  },
+  "experience": {
+    "title": "Expérience",
+    "currently": "Actuellement",
+    "jobs": {
+      "arcCycle": {
+        "title": "Fondateur et Développeur",
+        "description": "Création d'une application mobile avec un suivi d'habitudes, des défis quotidiens aléatoires, un système de gamification motivant, et des statistiques avancées pour suivre ta progression."
+      },
+      "iLoveNice": {
+        "title": "Vendeur",
+        "description": "Accueil et conseil clientèle dans un magasin de souvenirs. Gestion des ventes, encaissements et suivi de l'inventaire. Communication multilingue avec une clientèle internationale."
+      },
+      "mngrsAi": {
+        "title": "Full Stack Developpeur",
+        "description": "Contribution au développement d'une plateforme web innovante utilisant l'intelligence artificielle pour accompagner les artistes musicaux dans leur processus de création et la gestion complète de leur carrière artistique."
+      },
+      "consultant": {
+        "title": "Consultant / Développeur",
+        "description": "Consultant polyvalent intervenant sur des projets variés : développement logiciel, applications web, solutions techniques et mise en place d'infrastructures DevOps pour différents clients."
+      },
+      "freelance": {
+        "title": "Full Stack Developpeur Freelance",
+        "description": "Occasionnellement en parallèle de mes études, j'ai travaillé comme développeur freelance pour différents clients, principalement des sites vitrines et des boutiques e-commerce personnelles."
+      },
+      "gaming": {
+        "title": "Joueur semi-professionnel de jeu vidéo",
+        "description": "Grand passionné de jeux vidéo, j'ai participé à des centaines de tournois compétitifs sur 6 jeux différents allant de la division 2 à la division 1, développant ainsi des compétences en stratégie, analyse, travail d'équipe, leadership en tant que capitaine, prise de décision rapide et adaptation."
+      }
+    }
+  },
+  "projects": {
+    "title": "Mes Projets",
+    "arcCycle": {
+      "description": "Arc Cycle est une application mobile React Native conçue pour vous aider à développer votre discipline personnelle à travers un système de cycles (arcs) progressifs, de défis quotidiens et de suivi d'habitudes."
+    },
+    "linattendu": {
+      "description": "Site pour une Loveroom avec gestion de réservations avec un système automatisé d'envoi d'emails. Conçue pour simplifier la réservation d'espaces, elle offre une expérience utilisateur fluide avec notifications en temps réel et confirmations automatiques par email."
+    },
+    "aquapro": {
+      "description": "Site web professionnel pour un plombier à Montpellier, conçu pour mettre en valeur les services et faciliter la prise de contact. L'interface moderne et responsive présente les différentes prestations (plomberie, chauffage, dépannage d'urgence), les informations de contact et permet aux clients de contacter facilement l'entreprise pour leurs besoins."
+    },
+    "streetshop": {
+      "description": "Site web vitrine et de commande de CBD pour passer commande de fleurs, huiles, résines, cosmétiques, infusions et e-liquides sur Nice. Une plateforme e-commerce moderne permettant aux clients de découvrir et commander facilement des produits CBD de qualité avec une expérience utilisateur fluide et sécurisée."
+    },
+    "bouncingBalls": {
+      "description": "Vous connaissez ces balles rebondissantes qui envahissent TikTok et qui rendent les gens accros ? Eh bien, j'ai décidé de recréer ce petit phénomène en un week-end. Résultat : des heures perdues à regarder des balles rebondir, mais au moins c'est moi qui les ai codées ! Peut-être qu'on ira plus loin... ou peut-être pas, qui sait ?"
+    },
+    "learning": {
+      "title": "Apprendre",
+      "description": "J'adore apprendre : j'ai testé la data analyse, des jeux 2D, 3D, des arbres binaires, des algorithmes de tri et tout ce qui me tombe sous la main. Fouillez mon GitHub, même si 90 % de mes projets sont en privé ou sous licence, il reste quelques pépites de mes débuts à explorer."
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "Ce que je peux faire pour vous",
+    "webDev": {
+      "title": "Développement Web",
+      "description": "Applications web modernes et performantes avec React, TypeScript et Node.js"
+    },
+    "mobile": {
+      "title": "Applications Mobile",
+      "description": "Apps iOS et Android natives avec Swift et React Native"
+    },
+    "cloud": {
+      "title": "Cloud & DevOps",
+      "description": "Infrastructure cloud scalable avec AWS, Vercel et Supabase"
+    },
+    "design": {
+      "title": "UI/UX Design",
+      "description": "Interfaces élégantes et intuitives avec Figma"
+    },
+    "database": {
+      "title": "Base de Données",
+      "description": "Architecture et optimisation PostgreSQL, MongoDB"
+    },
+    "performance": {
+      "title": "Performance",
+      "description": "Optimisation et amélioration des performances"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Construisons quelque chose d'extraordinaire ensemble",
+    "getInTouch": "Get in touch",
+    "description": "Je suis disponible pour des offres d'emploi à court ou long terme, ainsi que pour des missions freelance. Si vous avez un projet en tête ou une opportunité à discuter, n'hésitez pas à me contacter !",
+    "available": "Disponible pour de nouveaux projets"
+  },
+  "footer": {
+    "craftedWith": "Crafted with"
+  }
+}

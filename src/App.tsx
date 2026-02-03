@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
 import { Skills } from "./components/Skills";
@@ -46,6 +47,7 @@ export default function App() {
 
   const HomePage = () => {
     const navigate = useNavigate();
+    const { t } = useTranslation();
 
     return (
       <div className="relative min-h-screen bg-black text-white overflow-x-hidden">
@@ -65,7 +67,7 @@ export default function App() {
         <footer className="relative z-10 py-8 border-t border-lime-400/20">
           <div className="max-w-7xl mx-auto px-4 flex items-center justify-center">
             <div className="text-lime-400/60 font-mono text-center flex items-center gap-2">
-              © {getCurrentYear()} - Crafted with{" "}
+              © {getCurrentYear()} - {t("footer.craftedWith")}{" "}
               <button
                 onClick={() => navigate("/capybara")}
                 className="hover:scale-110 transition-all duration-300 cursor-pointer"

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { Github, Linkedin, Mail, Briefcase, MapPin } from "lucide-react";
+import { Github, Linkedin, Mail, Briefcase } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const socialLinks = [
   {
@@ -33,6 +34,8 @@ const socialLinks = [
 ];
 
 export function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -46,12 +49,12 @@ export function Contact() {
           <h2 className="text-5xl md:text-7xl mb-6 font-mono">
             <span className="text-lime-400">{"<"}</span>
             <span className="bg-gradient-to-r from-lime-400 via-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">
-              Contact
+              {t("contact.title")}
             </span>
             <span className="text-cyan-400">{" />"}</span>
           </h2>
           <p className="text-xl text-white/60 font-mono">
-            Construisons quelque chose d&apos;extraordinaire ensemble
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -66,17 +69,14 @@ export function Contact() {
             <div className="absolute -inset-1 bg-gradient-to-r from-lime-400 to-cyan-400 rounded-2xl blur opacity-20" />
             <div className="relative bg-black border border-lime-400/30 rounded-2xl p-8 text-center">
               <h3 className="text-3xl mb-6 text-lime-400 font-mono">
-                Get in touch
+                {t("contact.getInTouch")}
               </h3>
               <p className="text-white/60 mb-8 leading-relaxed">
-                Je suis disponible pour des offres d&apos;emploi à court ou long
-                terme, ainsi que pour des missions freelance. Si vous avez un
-                projet en tête ou une opportunité à discuter, n&apos;hésitez pas
-                à me contacter !
+                {t("contact.description")}
               </p>
               <div className="flex items-center justify-center gap-2 text-lime-400 font-mono text-sm">
                 <div className="w-2 h-2 bg-lime-400 rounded-full animate-pulse" />
-                Disponible pour de nouveaux projets
+                {t("contact.available")}
               </div>
             </div>
           </motion.div>

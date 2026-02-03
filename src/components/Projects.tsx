@@ -1,12 +1,12 @@
 import { motion } from "motion/react";
 import { Apple, ExternalLink, Github, Star } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
+import { useTranslation } from "react-i18next";
 
-const projects = [
+const projectsData = [
   {
     title: "Arc Cycle",
-    description:
-      "Arc Cycle est une application mobile React Native conçue pour vous aider à développer votre discipline personnelle à travers un système de cycles (arcs) progressifs, de défis quotidiens et de suivi d'habitudes.",
+    descriptionKey: "arcCycle",
     image: "assets/arc-cycle-project.png",
     tags: [
       "React Native",
@@ -27,8 +27,7 @@ const projects = [
   },
   {
     title: "L'inattendu",
-    description:
-      "Site pour une Loveroom avec gestion de réservations avec un système automatisé d'envoi d'emails. Conçue pour simplifier la réservation d'espaces, elle offre une expérience utilisateur fluide avec notifications en temps réel et confirmations automatiques par email.",
+    descriptionKey: "linattendu",
     image: "assets/l'inattendu.png",
     tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite"],
     featured: false,
@@ -37,8 +36,7 @@ const projects = [
   },
   {
     title: "Aquapro",
-    description:
-      "Site web professionnel pour un plombier à Montpellier, conçu pour mettre en valeur les services et faciliter la prise de contact. L'interface moderne et responsive présente les différentes prestations (plomberie, chauffage, dépannage d'urgence), les informations de contact et permet aux clients de contacter facilement l'entreprise pour leurs besoins.",
+    descriptionKey: "aquapro",
     image: "assets/aquapro.png",
     tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite"],
     featured: false,
@@ -47,8 +45,7 @@ const projects = [
   },
   {
     title: "Street Shop",
-    description:
-      "Site web vitrine et de commande de CBD pour passer commande de fleurs, huiles, résines, cosmétiques, infusions et e-liquides sur Nice. Une plateforme e-commerce moderne permettant aux clients de découvrir et commander facilement des produits CBD de qualité avec une expérience utilisateur fluide et sécurisée.",
+    descriptionKey: "streetshop",
     image: "assets/streetshop.png",
     tags: [
       "TypeScript",
@@ -69,8 +66,7 @@ const projects = [
   },
   {
     title: "Bouncing Balls",
-    description:
-      "Vous connaissez ces balles rebondissantes qui envahissent TikTok et qui rendent les gens accros ? Eh bien, j'ai décidé de recréer ce petit phénomène en un week-end. Résultat : des heures perdues à regarder des balles rebondir, mais au moins c'est moi qui les ai codées ! Peut-être qu'on ira plus loin... ou peut-être pas, qui sait ?",
+    descriptionKey: "bouncingBalls",
     image: "assets/bouncing-balls.png",
     tags: ["Python", "Pygame", "Algorithme", "Physique", "Animation", "Fun"],
     featured: false,
@@ -78,9 +74,8 @@ const projects = [
     live: "https://www.tiktok.com/discover/can-the-ball-escape-game",
   },
   {
-    title: "Apprendre",
-    description:
-      "J'adore apprendre : j'ai testé la data analyse, des jeux 2D, 3D, des arbres binaires, des algorithmes de tri et tout ce qui me tombe sous la main. Fouillez mon GitHub, même si 90 % de mes projets sont en privé ou sous licence, il reste quelques pépites de mes débuts à explorer.",
+    titleKey: "learning",
+    descriptionKey: "learning",
     image: "assets/wallpaper2.jpeg",
     tags: [
       "C",
@@ -103,6 +98,7 @@ const projects = [
 ];
 
 export function Projects() {
+  const { t } = useTranslation();
   return (
     <section id="mes projets" className="relative py-32 px-4">
       <div className="max-w-7xl mx-auto">
@@ -121,120 +117,123 @@ export function Projects() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Mes Projets
+              {t("projects.title")}
             </span>
           </h2>
           <div className="w-24 h-1 mx-auto bg-gradient-to-r from-lime-400 to-cyan-400 rounded-full" />
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative group"
-            >
-              {project.featured && (
-                <motion.div
-                  initial={{ rotate: -45, scale: 0 }}
-                  whileInView={{ rotate: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ type: "spring", delay: 0.5 }}
-                  className="absolute -top-4 -right-4 z-20"
-                >
-                  <div className="relative">
-                    <div className="absolute inset-0 blur-xl bg-yellow-400 opacity-75" />
-                    <div className="relative bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full p-3 border-4 border-black">
-                      <Star className="w-6 h-6 text-white fill-white" />
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
+          {projectsData.map((project, index) => {
+            const projectTitle = project.titleKey ? t(`projects.${project.titleKey}.title`) : project.title;
+            return (
               <motion.div
-                whileHover={{ y: -10 }}
-                className="relative h-full overflow-hidden rounded-2xl backdrop-blur-xl bg-black/30 border border-lime-400/20 group-hover:border-lime-400/40 transition-all"
+                key={projectTitle}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="relative group"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
+                {project.featured && (
+                  <motion.div
+                    initial={{ rotate: -45, scale: 0 }}
+                    whileInView={{ rotate: 0, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ type: "spring", delay: 0.5 }}
+                    className="absolute -top-4 -right-4 z-20"
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-0 blur-xl bg-yellow-400 opacity-75" />
+                      <div className="relative bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full p-3 border-4 border-black">
+                        <Star className="w-6 h-6 text-white fill-white" />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
 
-                <div className="relative h-64 overflow-hidden">
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    style={
-                      project.title === "Arc Cycle"
-                        ? {
-                            objectPosition: "center 55%",
-                          }
-                        : project.title === "Street Shop"
-                        ? {
-                            objectPosition: "center 0%",
-                          }
-                        : undefined
-                    }
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+                <motion.div
+                  whileHover={{ y: -10 }}
+                  className="relative h-full overflow-hidden rounded-2xl backdrop-blur-xl bg-black/30 border border-lime-400/20 group-hover:border-lime-400/40 transition-all"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                  <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                    >
-                      <Github size={24} />
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.9 }}
-                      className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                    >
-                      <ExternalLink size={24} />
-                    </motion.a>
-                    {project.title === "Arc Cycle" && (
+                  <div className="relative h-64 overflow-hidden">
+                    <ImageWithFallback
+                      src={project.image}
+                      alt={projectTitle || ""}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      style={
+                        project.title === "Arc Cycle"
+                          ? {
+                              objectPosition: "center 55%",
+                            }
+                          : project.title === "Street Shop"
+                          ? {
+                              objectPosition: "center 0%",
+                            }
+                          : undefined
+                      }
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+                    <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
                       <motion.a
-                        href={project.apple}
+                        href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
                       >
-                        <Apple size={24} />
+                        <Github size={24} />
                       </motion.a>
-                    )}
-                  </div>
-                </div>
-
-                <div className="relative p-6">
-                  <h3 className="text-2xl mb-3">{project.title}</h3>
-                  <p className="text-gray-300 mb-4">{project.description}</p>
-
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 rounded-full bg-gradient-to-r from-lime-400/20 to-cyan-400/20 text-lime-400 border border-lime-400/30 text-sm"
+                      <motion.a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
                       >
-                        {tag}
-                      </span>
-                    ))}
+                        <ExternalLink size={24} />
+                      </motion.a>
+                      {project.title === "Arc Cycle" && (
+                        <motion.a
+                          href={project.apple}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                        >
+                          <Apple size={24} />
+                        </motion.a>
+                      )}
+                    </div>
                   </div>
-                </div>
 
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-lime-400/20 to-transparent transform translate-x-8 -translate-y-8 rotate-45" />
+                  <div className="relative p-6">
+                    <h3 className="text-2xl mb-3">{projectTitle}</h3>
+                    <p className="text-gray-300 mb-4">{t(`projects.${project.descriptionKey}.description`)}</p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 rounded-full bg-gradient-to-r from-lime-400/20 to-cyan-400/20 text-lime-400 border border-lime-400/30 text-sm"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-lime-400/20 to-transparent transform translate-x-8 -translate-y-8 rotate-45" />
+                </motion.div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         <motion.div

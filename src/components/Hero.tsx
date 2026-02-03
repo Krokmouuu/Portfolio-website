@@ -1,7 +1,9 @@
 import { motion } from "motion/react";
 import { ChevronDown, Sparkles } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 export function Hero() {
+  const { t } = useTranslation();
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -48,7 +50,7 @@ export function Hero() {
         >
           <Sparkles className="text-lime-400" size={24} />
           <span className="text-lime-400 font-mono text-sm tracking-wider">
-            FULL-STACK DEVELOPER
+            {t("hero.role")}
           </span>
           <Sparkles className="text-lime-400" size={24} />
         </motion.div>
@@ -74,8 +76,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-xl md:text-2xl text-white/60 mb-12 max-w-3xl mx-auto font-mono"
         >
-          <span className="text-lime-400">{"{"}</span> Transformant des idées en
-          expériences digitales exceptionnelles{" "}
+          <span className="text-lime-400">{"{"}</span> {t("hero.tagline")}{" "}
           <span className="text-cyan-400">{"}"}</span>
         </motion.div>
 
@@ -93,14 +94,14 @@ export function Hero() {
             }}
             className="group relative px-8 py-4 bg-lime-400 text-black rounded-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(163,230,53,0.5)] cursor-pointer"
           >
-            <span className="relative z-10 font-mono">Voir mes projets</span>
+            <span className="relative z-10 font-mono">{t("hero.viewProjects")}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-lime-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
           <a
             href="#contact"
             className="px-8 py-4 border-2 border-lime-400 text-lime-400 rounded-lg hover:bg-lime-400 hover:text-black transition-all duration-300 font-mono"
           >
-            Me contacter
+            {t("hero.contactMe")}
           </a>
         </motion.div>
 

@@ -1,15 +1,18 @@
 import { motion } from "motion/react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { Terminal, Zap, Trophy } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
 const japanImage = "/assets/about-image.jpg";
 
-const stats = [
-  { icon: Terminal, value: "14", label: "Projets réalisés" },
-  { icon: Zap, value: "3", label: "Années d'expérience" },
-  { icon: Trophy, value: "14", label: "Clients satisfaits" },
+const statsData = [
+  { icon: Terminal, value: "14", labelKey: "projects" },
+  { icon: Zap, value: "3", labelKey: "experience" },
+  { icon: Trophy, value: "14", labelKey: "clients" },
 ];
 
 export function About() {
+  const { t } = useTranslation();
   return (
     <section id="à propos" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
@@ -23,7 +26,7 @@ export function About() {
           <h2 className="text-5xl md:text-7xl mb-6 font-mono">
             <span className="text-lime-400">{"<"}</span>
             <span className="bg-gradient-to-r from-lime-400 via-cyan-400 to-fuchsia-500 bg-clip-text text-transparent">
-              À propos
+              {t("about.title")}
             </span>
             <span className="text-cyan-400">{" />"}</span>
           </h2>
@@ -69,10 +72,7 @@ export function About() {
               {"}"};
             </p>
             <p className="text-white/60 mb-6 leading-relaxed">
-              Développeur Full-Stack passionné avec une expertise dans la
-              création d&apos;applications web et mobiles modernes. Je
-              transforme des concepts complexes en solutions digitales élégantes
-              et performantes.
+              {t("about.description")}
             </p>
             <div className="flex flex-wrap gap-4">
               <div className="px-4 py-2 bg-lime-400/10 border border-lime-400/30 rounded-lg">
@@ -89,9 +89,9 @@ export function About() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {stats.map((stat, index) => (
+          {statsData.map((stat, index) => (
             <motion.div
-              key={stat.label}
+              key={stat.labelKey}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
@@ -104,7 +104,7 @@ export function About() {
                 <div className="text-5xl mb-2 bg-gradient-to-r from-lime-400 to-cyan-400 bg-clip-text text-transparent">
                   {stat.value}
                 </div>
-                <div className="text-white/60 font-mono">{stat.label}</div>
+                <div className="text-white/60 font-mono">{t(`about.stats.${stat.labelKey}`)}</div>
               </div>
             </motion.div>
           ))}

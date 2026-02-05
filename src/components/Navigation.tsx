@@ -13,8 +13,8 @@ const navKeys = [
 ];
 
 const languages = [
-  { code: "fr", flag: "🇫🇷", label: "Français" },
-  { code: "en", flag: "🇬🇧", label: "English" },
+  { code: "fr", flagClass: "fi fi-fr", label: "Français" },
+  { code: "en", flagClass: "fi fi-gb", label: "English" },
 ];
 
 export function Navigation() {
@@ -100,10 +100,14 @@ export function Navigation() {
           <div className="relative ml-4 border-l border-lime-400/30 pl-4" ref={langDropdownRef}>
             <button
               onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-              className="text-xl transition-all duration-200 hover:scale-110 flex items-center gap-1"
+              className="transition-all duration-200 hover:scale-110 flex items-center gap-1"
               title={currentLang.label}
             >
-              {currentLang.flag}
+              <span
+                className={currentLang.flagClass}
+                style={{ width: "1.5rem", height: "1.125rem" }}
+                aria-hidden
+              />
             </button>
 
             <AnimatePresence>
@@ -121,7 +125,11 @@ export function Navigation() {
                       onClick={() => changeLanguage(lang.code)}
                       className="flex items-center gap-2 px-4 py-2 text-white/70 hover:text-lime-400 hover:bg-lime-400/10 transition-colors w-full"
                     >
-                      <span className="text-xl">{lang.flag}</span>
+                      <span
+                        className={lang.flagClass}
+                        style={{ width: "1.5rem", height: "1.125rem" }}
+                        aria-hidden
+                      />
                       <span className="font-mono text-sm">{lang.label}</span>
                     </button>
                   ))}
@@ -196,7 +204,11 @@ export function Navigation() {
                         : "bg-white/5 border border-white/10 hover:border-lime-400/40"
                     }`}
                   >
-                    <span className="text-xl">{lang.flag}</span>
+                    <span
+                      className={lang.flagClass}
+                      style={{ width: "1.5rem", height: "1.125rem" }}
+                      aria-hidden
+                    />
                     <span className={`font-mono text-sm ${
                       i18n.language === lang.code ? "text-lime-400" : "text-white/60"
                     }`}>

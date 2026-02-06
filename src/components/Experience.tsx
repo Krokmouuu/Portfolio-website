@@ -1,9 +1,33 @@
+import { useRef } from "react";
 import { motion } from "motion/react";
 import { Calendar, MapPin } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { useTranslation } from "react-i18next";
 
 const experiencesData = [
+  {
+    titleKey: "estateUp",
+    company: "EstateUp",
+    location: "Nice, France",
+    period: "2026",
+    periodKey: "currently",
+    image: "/assets/placeholder.mp4",
+    tags: [
+      "React",
+      "TypeScript",
+      "Sentry",
+      "Supabase",
+      "Vercel",
+      "Vite",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Prisma",
+      "Python Django",
+      "API",
+      "Stripe",
+      "Authentication",
+    ],
+  },
   {
     titleKey: "arcCycle",
     company: "Arc Cycle",
@@ -110,8 +134,11 @@ const experiencesData = [
   },
 ];
 
+const isVideo = (src: string) => src.endsWith(".mp4") || src.endsWith(".webm");
+
 export function Experience() {
   const { t } = useTranslation();
+  const estateUpVideoRef = useRef<HTMLVideoElement>(null);
   return (
     <section id="experience" className="relative py-32 px-4 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -174,29 +201,56 @@ export function Experience() {
                 className={`relative group ${
                   index % 2 === 0 ? "md:mr-12" : "md:ml-12"
                 }`}
+                onMouseEnter={() => {
+                  if (isVideo(exp.image) && estateUpVideoRef.current) {
+                    estateUpVideoRef.current.play();
+                  }
+                }}
+                onMouseLeave={() => {
+                  if (isVideo(exp.image) && estateUpVideoRef.current) {
+                    estateUpVideoRef.current.pause();
+                    estateUpVideoRef.current.currentTime = 0;
+                  }
+                }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all" />
                 <div className="relative overflow-hidden rounded-2xl backdrop-blur-xl bg-black/30 border border-lime-400/20 group-hover:border-lime-400/40 transition-all">
                   <div className="relative h-48 overflow-hidden">
-                    <ImageWithFallback
-                      src={exp.image}
-                      alt={exp.company || t(`experience.jobs.${exp.titleKey}.title`)}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                      style={
-                        exp.company === "Arc Cycle"
-                          ? { objectPosition: "center 57%" }
-                          : exp.titleKey === "gaming"
-                          ? { objectPosition: "center 55%" }
-                          : exp.company === "MNGRS.AI"
-                          ? { objectPosition: "center 65%" }
-                          : undefined
-                      }
-                    />
+                    {isVideo(exp.image) ? (
+                      <video
+                        ref={estateUpVideoRef}
+                        src={exp.image}
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <ImageWithFallback
+                        src={exp.image}
+                        alt={
+                          exp.company ||
+                          t(`experience.jobs.${exp.titleKey}.title`)
+                        }
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        style={
+                          exp.company === "Arc Cycle"
+                            ? { objectPosition: "center 57%" }
+                            : exp.titleKey === "gaming"
+                              ? { objectPosition: "center 55%" }
+                              : exp.company === "MNGRS.AI"
+                                ? { objectPosition: "center 65%" }
+                                : undefined
+                        }
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                   </div>
 
                   <div className="p-6">
-                    <h3 className="text-2xl mb-2">{t(`experience.jobs.${exp.titleKey}.title`)}</h3>
+                    <h3 className="text-2xl mb-2">
+                      {t(`experience.jobs.${exp.titleKey}.title`)}
+                    </h3>
                     <div className="text-xl text-lime-400 mb-4">
                       {exp.company}
                     </div>
@@ -204,7 +258,11 @@ export function Experience() {
                     <div className="flex flex-wrap items-center gap-4 mb-4 text-gray-400">
                       <div className="flex items-center gap-2">
                         <Calendar size={16} />
-                        <span>{exp.periodKey ? `${exp.period} - ${t(`experience.${exp.periodKey}`)}` : exp.period}</span>
+                        <span>
+                          {exp.periodKey
+                            ? `${exp.period} - ${t(`experience.${exp.periodKey}`)}`
+                            : exp.period}
+                        </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <MapPin size={16} />
@@ -212,7 +270,9 @@ export function Experience() {
                       </div>
                     </div>
 
-                    <p className="text-gray-300 mb-4">{t(`experience.jobs.${exp.titleKey}.description`)}</p>
+                    <p className="text-gray-300 mb-4">
+                      {t(`experience.jobs.${exp.titleKey}.description`)}
+                    </p>
 
                     <div className="flex flex-wrap gap-2">
                       {exp.tags.map((tag) => (

@@ -7,6 +7,7 @@ import { Skills } from "./components/Skills";
 import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { Services } from "./components/Services";
+import { ReviewsSection } from "./components/ReviewSection";
 import { Contact } from "./components/Contact";
 import { ParticleBackground } from "./components/ParticleBackground";
 import { Navigation } from "./components/Navigation";
@@ -61,6 +62,7 @@ export default function App() {
           <Experience />
           <Projects />
           <Services />
+          <ReviewsSection />
           <Contact />
         </div>
 

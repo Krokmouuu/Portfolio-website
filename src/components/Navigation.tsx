@@ -9,6 +9,7 @@ const navKeys = [
   { key: "experience", id: "experience" },
   { key: "projects", id: "mes projets" },
   { key: "services", id: "services" },
+  { key: "reviews", id: "reviews" },
   { key: "contact", id: "contact" },
 ];
 

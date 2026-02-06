@@ -202,7 +202,6 @@ const projectsData: Project[] = [
       "TypeScript",
       "Sentry",
       "Supabase",
-      "Mixpanel",
       "Vercel",
       "Vite",
       "TailwindCSS",

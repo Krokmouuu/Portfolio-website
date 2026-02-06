@@ -5,6 +5,7 @@
     "experience": "Expérience",
     "projects": "Mes Projets",
     "services": "Services",
+    "reviews": "Avis",
     "contact": "Contact"
   },
   "hero": {
@@ -43,6 +44,10 @@
     "title": "Expérience",
     "currently": "Actuellement",
     "jobs": {
+      "estateUp": {
+        "title": "Fondateur et Développeur Full Stack",
+        "description": "Développement d'une application web d'amélioration de photos immobilières par IA : home staging virtuel, ciel bleu, retouches. Stack moderne (React, TypeScript, Django, Stripe, Supabase) avec un rendu ultra réaliste et une expérience utilisateur simple en quelques clics."
+      },
       "arcCycle": {
         "title": "Fondateur et Développeur",
         "description": "Création d'une application mobile avec un suivi d'habitudes, des défis quotidiens aléatoires, un système de gamification motivant, et des statistiques avancées pour suivre ta progression."
@@ -93,6 +98,10 @@
       "title": "Apprendre",
       "description": "J'adore apprendre : j'ai testé la data analyse, des jeux 2D, 3D, des arbres binaires, des algorithmes de tri et tout ce qui me tombe sous la main. Fouillez mon GitHub, même si 90 % de mes projets sont en privé ou sous licence, il reste quelques pépites de mes débuts à explorer."
     }
+  },
+  "reviews": {
+    "title": "Avis",
+    "subtitle": "Ce que mes clients disent de mon travail"
   },
   "services": {
     "title": "Services",

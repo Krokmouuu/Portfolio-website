@@ -82,6 +82,9 @@
     "estateUp": {
       "description": "Améliorez vos photos immobilières en 3 clics : home staging virtuel, ciel bleu, retouches... Ultra simple à utiliser et un rendu ultra réaliste. Sublimez vos annonces en quelques secondes grâce à l'IA."
     },
+    "bleroy's life": {
+      "description": "Le Jeu de la vie de Conway, en version web. Crée, observe et sauvegarde tes motifs sur une grille infinie, avec une interface fluide et une intro soignée."
+    },
     "linattendu": {
       "description": "Site pour une Loveroom avec gestion de réservations avec un système automatisé d'envoi d'emails. Conçue pour simplifier la réservation d'espaces, elle offre une expérience utilisateur fluide avec notifications en temps réel et confirmations automatiques par email."
     },

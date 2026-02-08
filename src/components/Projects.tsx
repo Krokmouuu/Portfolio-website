@@ -87,7 +87,12 @@ function ProjectCard({
               loop
               playsInline
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              style={{ objectPosition: "center 70%" }}
+              style={{
+                objectPosition:
+                  project.title === "Bleroy's Life"
+                    ? "center 40%"
+                    : "center 70%",
+              }}
             />
           ) : (
             <ImageWithFallback
@@ -213,6 +218,15 @@ const projectsData: Project[] = [
       "Authentication",
     ],
     featured: true,
+  },
+  {
+    title: "Bleroy's Life",
+    descriptionKey: "bleroy's life",
+    video: "assets/bleroy's life.mp4",
+    tags: ["React 18", "Vite", "TypeScript", "Tailwind CSS", "Motion", "Radix UI"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Bleroy-s-Life",
+    live: "https://bleroy-s-life.vercel.app/",
   },
   {
     title: "L'inattendu",

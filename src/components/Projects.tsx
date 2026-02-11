@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { Apple, ExternalLink, Github, Star } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { useTranslation } from "react-i18next";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 interface Project {
   title?: string;
@@ -31,9 +31,10 @@ function ProjectCard({
   t: (key: string) => string;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoError, setVideoError] = useState(false);
 
   const handleMouseEnter = () => {
-    if (videoRef.current) {
+    if (videoRef.current && !videoError) {
       videoRef.current.play();
     }
   };
@@ -44,6 +45,8 @@ function ProjectCard({
       videoRef.current.currentTime = 0;
     }
   };
+
+  const useVideo = project.video && !videoError;
 
   return (
     <motion.div
@@ -79,13 +82,14 @@ function ProjectCard({
         <div className="absolute inset-0 bg-gradient-to-br from-lime-400/20 to-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity" />
 
         <div className="relative h-64 overflow-hidden">
-          {project.video ? (
+          {useVideo ? (
             <video
               ref={videoRef}
               src={project.video}
               muted
               loop
               playsInline
+              onError={() => setVideoError(true)}
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               style={{
                 objectPosition:
@@ -104,6 +108,8 @@ function ProjectCard({
                   ? { objectPosition: "center 55%" }
                   : project.title === "Street Shop"
                   ? { objectPosition: "center 0%" }
+                  : project.title === "Bleroy's Life"
+                  ? { objectPosition: "center 40%" }
                   : undefined
               }
             />
@@ -222,8 +228,9 @@ const projectsData: Project[] = [
   {
     title: "Bleroy's Life",
     descriptionKey: "bleroy's life",
-    video: "assets/bleroy's life.mp4",
-    tags: ["React 18", "Vite", "TypeScript", "Tailwind CSS", "Motion", "Radix UI"],
+    image: "assets/l'inattendu.png",
+    video: "assets/bleroys-life.mp4",
+    tags: ["React", "Vite", "TypeScript", "Tailwind CSS", "Motion", "Radix UI"],
     featured: false,
     github: "https://github.com/Krokmouuu/Bleroy-s-Life",
     live: "https://bleroy-s-life.vercel.app/",

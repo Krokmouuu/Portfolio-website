@@ -229,7 +229,7 @@ const projectsData: Project[] = [
     title: "Bleroy's Life",
     descriptionKey: "bleroy's life",
     image: "assets/l'inattendu.png",
-    video: "assets/bleroys-life.mp4",
+    video: "assets/bleroylife2.mp4",
     tags: ["React", "Vite", "TypeScript", "Tailwind CSS", "Motion", "Radix UI"],
     featured: false,
     github: "https://github.com/Krokmouuu/Bleroy-s-Life",

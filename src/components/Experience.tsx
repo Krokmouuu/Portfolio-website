@@ -72,6 +72,7 @@ const experiencesData = [
     tags: [
       "React",
       "Node.js",
+      "Next.js",
       "Python Django",
       "TypeScript",
       "Sentry",

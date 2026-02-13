@@ -31,6 +31,10 @@ const primarySkillsData = [
   { name: "PostgreSQL", color: "from-sky-400 to-blue-500" },
   { name: "DevOps", color: "from-lime-400 to-emerald-500" },
   { name: "JavaScript", color: "from-amber-400 to-orange-500" },
+  { name: "Next.js", color: "from-black to-white" },
+  { name: "Nest.js", color: "from-red-400 to-orange-500" },
+  { name: "Node.js", color: "from-green-400 to-lime-500" },
+
 ];
 
 const secondarySkillsData = [

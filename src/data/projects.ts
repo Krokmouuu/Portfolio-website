@@ -1,0 +1,365 @@
+export type ProjectCategory =
+  | "web"
+  | "mobile"
+  | "game"
+  | "system"
+  | "security"
+  | "data"
+  | "devops";
+
+export interface ProjectSection {
+  key: string;
+  icon: string;
+  items?: boolean;
+}
+
+export interface ProjectData {
+  slug: string;
+  title: string;
+  descriptionKey: string;
+  image?: string;
+  video?: string;
+  tags: string[];
+  categories: ProjectCategory[];
+  featured?: boolean;
+  github?: string;
+  live?: string;
+  apple?: string;
+  sections?: ProjectSection[];
+}
+
+export const categoryLabels: Record<string, { fr: string; en: string }> = {
+  all: { fr: "Tous", en: "All" },
+  web: { fr: "Web", en: "Web" },
+  mobile: { fr: "Mobile", en: "Mobile" },
+  game: { fr: "Jeux", en: "Games" },
+  system: { fr: "Système", en: "System" },
+  security: { fr: "Sécurité", en: "Security" },
+  data: { fr: "Data", en: "Data" },
+  devops: { fr: "DevOps", en: "DevOps" },
+};
+
+export const allProjects: ProjectData[] = [
+  {
+    slug: "arc-cycle",
+    title: "Arc Cycle",
+    descriptionKey: "arcCycle",
+    image: "/assets/arc-cycle-project.png",
+    tags: [
+      "React Native",
+      "Swift",
+      "Expo",
+      "TypeScript",
+      "Sentry",
+      "Supabase",
+      "RevenueCat",
+      "App Store Connect",
+      "Mixpanel",
+    ],
+    categories: ["mobile"],
+    featured: true,
+    github: "https://github.com/Krokmouuu/ArcCycle-Frontend",
+    live: "https://arc-cycle.app/",
+    apple:
+      "https://apps.apple.com/us/app/arc-cycle-build-discipline/id6755734026",
+    sections: [
+      { key: "screens", icon: "📱", items: true },
+      { key: "features", icon: "⚡", items: true },
+      { key: "premium", icon: "💎", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "estateup",
+    title: "EstateUp",
+    descriptionKey: "estateUp",
+    video: "/assets/placeholder.mp4",
+    tags: [
+      "React",
+      "TypeScript",
+      "Sentry",
+      "Supabase",
+      "Vercel",
+      "Vite",
+      "TailwindCSS",
+      "PostgreSQL",
+      "Prisma",
+      "Python Django",
+      "API",
+      "Stripe",
+      "Authentication",
+    ],
+    categories: ["web"],
+    featured: true,
+    sections: [
+      { key: "howItWorks", icon: "🔄", items: true },
+      { key: "dashboard", icon: "📊", items: true },
+      { key: "transforms", icon: "🎨", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "bleroys-life",
+    title: "Bleroy's Life",
+    descriptionKey: "bleroy's life",
+    image: "/assets/l'inattendu.png",
+    video: "/assets/bleroylife2.mp4",
+    tags: ["React", "Vite", "TypeScript", "Tailwind CSS", "Motion", "Radix UI"],
+    categories: ["web"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Bleroy-s-Life",
+    sections: [
+      { key: "features", icon: "🧩", items: true },
+      { key: "presets", icon: "🔬", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+    live: "https://bleroy-s-life.vercel.app/",
+  },
+  {
+    slug: "linattendu",
+    title: "L'inattendu",
+    descriptionKey: "linattendu",
+    image: "/assets/l'inattendu.png",
+    tags: [
+      "TypeScript",
+      "React",
+      "TailwindCSS",
+      "Vercel",
+      "Vite",
+      "EmailJS",
+      "Radix UI",
+      "Motion",
+    ],
+    categories: ["web"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Linattendu",
+    sections: [
+      { key: "pages", icon: "📄", items: true },
+      { key: "features", icon: "✨", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+    live: "https://www.linattendu-love-room.fr/",
+  },
+  {
+    slug: "aquapro",
+    title: "Aquapro",
+    descriptionKey: "aquapro",
+    image: "/assets/aquapro.png",
+    tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite", "Motion"],
+    categories: ["web"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/aquapro",
+    live: "https://aquapro-psi.vercel.app/",
+    sections: [
+      { key: "services", icon: "🔧", items: true },
+      { key: "sections", icon: "📄", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "streetshop",
+    title: "Street Shop",
+    descriptionKey: "streetshop",
+    image: "/assets/streetshop.png",
+    tags: [
+      "TypeScript",
+      "React",
+      "TailwindCSS",
+      "Vercel",
+      "Vite",
+      "PostgreSQL",
+      "Stripe",
+      "Authentication",
+      "Node.js",
+      "Express",
+      "Docker",
+    ],
+    categories: ["web"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/StreetShop",
+    live: "https://street-shop-alpha.vercel.app/",
+    sections: [
+      { key: "products", icon: "🛍️", items: true },
+      { key: "features", icon: "⚡", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "bouncing-balls",
+    title: "Bouncing Balls",
+    descriptionKey: "bouncingBalls",
+    image: "/assets/bouncing-balls.png",
+    tags: ["Python", "Pygame", "Algorithme", "Physique", "Animation"],
+    categories: ["game"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/bouncing-balls",
+    live: "https://www.tiktok.com/discover/can-the-ball-escape-game",
+    sections: [
+      { key: "features", icon: "🎮", items: true },
+      { key: "customization", icon: "🎨", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "ft-transcendance",
+    title: "Ft_transcendance",
+    descriptionKey: "ftTranscendance",
+    image: "/assets/ft_transcendence.png",
+    tags: [
+      "TypeScript",
+      "NestJS",
+      "Svelte",
+      "PostgreSQL",
+      "Prisma",
+      "Docker",
+      "Socket.io",
+      "OAuth2",
+      "2FA",
+      "JWT",
+    ],
+    categories: ["web", "game"],
+    featured: false,
+    github: "https://github.com/ktroude/Ft_Transcendence",
+    sections: [
+      { key: "features", icon: "⚡", items: true },
+      { key: "stack", icon: "🛠️", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "ft-container",
+    title: "Ft_container",
+    descriptionKey: "ftContainer",
+    image: "/assets/red-black-tree.png",
+    tags: ["C++", "STL", "Templates", "Data Structures", "Iterators", "Red-Black Tree"],
+    categories: ["system"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/ft_containers",
+    sections: [
+      { key: "containers", icon: "📦", items: true },
+      { key: "architecture", icon: "🏗️", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "cub3d",
+    title: "Cub3D",
+    descriptionKey: "cub3d",
+    image: "/assets/cub3d.jpg",
+    tags: ["C", "MiniLibX", "Raycasting", "Mathématiques", "Graphisme"],
+    categories: ["game", "system"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/cub3d",
+    sections: [
+      { key: "features", icon: "🎮", items: true },
+      { key: "technical", icon: "🔧", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "pushswap",
+    title: "Push_swap",
+    descriptionKey: "pushswap",
+    image: "/assets/Tris_algorithmes.png",
+    tags: ["C", "Algorithmes de tri", "Complexité", "Optimisation"],
+    categories: ["system"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Push_swap",
+    sections: [
+      { key: "operations", icon: "🔀", items: true },
+      { key: "algorithm", icon: "⚙️", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "rainfall",
+    title: "Rainfall",
+    descriptionKey: "rainfall",
+    image: "/assets/cybersecurity.jpg",
+    tags: [
+      "C",
+      "Assembleur",
+      "Buffer Overflow",
+      "Format String",
+      "GDB",
+      "Reverse Engineering",
+    ],
+    categories: ["security"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Rainfall",
+    sections: [
+      { key: "concept", icon: "🔐", items: true },
+      { key: "levels", icon: "🎯", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "inception",
+    title: "Inception",
+    descriptionKey: "inception",
+    image: "/assets/docker.png",
+    tags: [
+      "Docker",
+      "Docker Compose",
+      "NGINX",
+      "WordPress",
+      "MariaDB",
+      "TLS",
+      "Shell Script",
+      "Makefile",
+    ],
+    categories: ["devops"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Inception",
+    sections: [
+      { key: "services", icon: "🐳", items: true },
+      { key: "architecture", icon: "🏗️", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "python-data-science",
+    title: "Python Data Science",
+    descriptionKey: "pythonDataScience",
+    image: "/assets/data-science.jpg",
+    tags: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Jupyter",
+    ],
+    categories: ["data"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Python-Data-Science-Pool",
+    sections: [
+      { key: "days", icon: "📅", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+  {
+    slug: "querytest",
+    title: "QueryTest",
+    descriptionKey: "querytest",
+    image: "/assets/queryIA.png",
+    tags: [
+      "TypeScript",
+      "Next.js",
+      "NestJS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Recharts",
+      "Tailwind CSS",
+      "LLM",
+      "Docker",
+    ],
+    categories: ["web", "data"],
+    featured: false,
+    github: "https://github.com/Krokmouuu/Query-Test",
+    sections: [
+      { key: "howItWorks", icon: "🔄", items: true },
+      { key: "features", icon: "⚡", items: true },
+      { key: "learned", icon: "🧠", items: true },
+    ],
+  },
+];

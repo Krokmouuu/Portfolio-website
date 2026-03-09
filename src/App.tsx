@@ -13,6 +13,8 @@ import { ParticleBackground } from "./components/ParticleBackground";
 import { Navigation } from "./components/Navigation";
 import { NotFound } from "./components/NotFound";
 import { Capybara } from "./components/Capybara";
+import { ProjectsPage } from "./pages/ProjectsPage";
+import { ProjectDetail } from "./pages/ProjectDetail";
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -91,6 +93,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/projects" element={<ProjectsPage />} />
+      <Route path="/projects/:slug" element={<ProjectDetail />} />
       <Route path="/capybara" element={<Capybara />} />
       <Route path="*" element={<NotFound />} />
     </Routes>

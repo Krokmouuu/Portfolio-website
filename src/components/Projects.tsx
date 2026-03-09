@@ -3,6 +3,7 @@ import { Apple, ExternalLink, Github, Star } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Project {
   title?: string;
@@ -161,7 +162,7 @@ function ProjectCard({
         <div className="relative p-6">
           <h3 className="text-2xl mb-3">{projectTitle}</h3>
           <p className="text-gray-300 mb-4">
-            {t(`projects.${project.descriptionKey}.description`)}
+            {t(`projects.${project.descriptionKey}.short`)}
           </p>
 
           <div className="flex flex-wrap gap-2">
@@ -284,28 +285,41 @@ const projectsData: Project[] = [
     live: "https://www.tiktok.com/discover/can-the-ball-escape-game",
   },
   {
-    titleKey: "learning",
-    descriptionKey: "learning",
-    image: "assets/wallpaper2.jpeg",
+    title: "QueryTest",
+    descriptionKey: "querytest",
+    image: "assets/queryIA.png",
     tags: [
-      "C",
-      "C++",
-      "JavaScript",
-      "HTML",
-      "CSS",
-      "Typescript",
-      "React",
-      "Assembleur",
-      "Cybersecurity",
-      "Data Analysis",
-      "Game Development",
-      "Web Development",
+      "TypeScript",
+      "Next.js",
+      "NestJS",
+      "PostgreSQL",
+      "Drizzle ORM",
+      "Recharts",
+      "Tailwind CSS",
+      "LLM",
+      "Docker",
     ],
     featured: false,
-    github: "https://github.com/Krokmouuu",
-    live: "#",
+    github: "https://github.com/Krokmouuu/Query-Test",
   },
 ];
+
+function ViewAllButton() {
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const label = t("hero.viewProjects");
+
+  return (
+    <motion.button
+      onClick={() => navigate("/projects")}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="inline-block px-8 py-4 rounded-full border-2 border-lime-400 text-lime-400 hover:bg-lime-400/10 transition-all cursor-pointer"
+    >
+      {label}
+    </motion.button>
+  );
+}
 
 export function Projects() {
   const { t } = useTranslation();
@@ -358,14 +372,7 @@ export function Projects() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mt-12"
         >
-          {/* <motion.a
-            href="#"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 rounded-full border-2 border-lime-400 text-lime-400 hover:bg-lime-400/10 transition-all"
-          >
-            View All Projects
-          </motion.a> */}
+          <ViewAllButton />
         </motion.div>
       </div>
     </section>

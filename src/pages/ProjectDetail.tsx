@@ -13,6 +13,7 @@ import { allProjects, categoryLabels } from "../data/projects";
 import { ImageWithFallback } from "../components/fallback/ImageWithFallback";
 import { HeartBackground } from "../components/HeartBackground";
 import { useRef, useState } from "react";
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
 
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -78,25 +79,29 @@ export function ProjectDetail() {
               </span>
             </Link>
 
-            <div className="flex items-center gap-2">
-              {prevProject && (
-                <button
-                  onClick={() => navigate(`/projects/${prevProject.slug}`)}
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-lime-400/30 hover:text-lime-400 transition-all text-sm"
-                >
-                  <ChevronLeft size={14} />
-                  <span className="hidden sm:inline">{prevProject.title}</span>
-                </button>
-              )}
-              {nextProject && (
-                <button
-                  onClick={() => navigate(`/projects/${nextProject.slug}`)}
-                  className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-lime-400/30 hover:text-lime-400 transition-all text-sm"
-                >
-                  <span className="hidden sm:inline">{nextProject.title}</span>
-                  <ChevronRight size={14} />
-                </button>
-              )}
+            <div className="flex items-center gap-4">
+              <div className="flex items-center gap-2">
+                {prevProject && (
+                  <button
+                    onClick={() => navigate(`/projects/${prevProject.slug}`)}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-lime-400/30 hover:text-lime-400 transition-all text-sm"
+                  >
+                    <ChevronLeft size={14} />
+                    <span className="hidden sm:inline">{prevProject.title}</span>
+                  </button>
+                )}
+                {nextProject && (
+                  <button
+                    onClick={() => navigate(`/projects/${nextProject.slug}`)}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-full border border-white/10 text-gray-400 hover:border-lime-400/30 hover:text-lime-400 transition-all text-sm"
+                  >
+                    <span className="hidden sm:inline">{nextProject.title}</span>
+                    <ChevronRight size={14} />
+                  </button>
+                )}
+              </div>
+
+              <LanguageSwitcher className="border-l border-lime-400/30 pl-4" />
             </div>
           </div>
         </header>

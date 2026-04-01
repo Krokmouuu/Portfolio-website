@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Apple, ExternalLink, Github, Star } from "lucide-react";
+import { Apple, ExternalLink, Github, MoreHorizontal, Star } from "lucide-react";
 import { ImageWithFallback } from "./fallback/ImageWithFallback";
 import { useTranslation } from "react-i18next";
 import { useRef, useState } from "react";
@@ -9,6 +9,7 @@ interface Project {
   title?: string;
   titleKey?: string;
   descriptionKey: string;
+  slug: string;
   image?: string;
   video?: string;
   tags: string[];
@@ -33,6 +34,7 @@ function ProjectCard({
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoError, setVideoError] = useState(false);
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     if (videoRef.current && !videoError) {
@@ -117,46 +119,71 @@ function ProjectCard({
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
-          {hasLinks && (
-            <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
-              {project.github && (
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                >
-                  <Github size={24} />
-                </motion.a>
-              )}
-              {project.live && (
-                <motion.a
-                  href={project.live}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                >
-                  <ExternalLink size={24} />
-                </motion.a>
-              )}
-              {project.apple && (
-                <motion.a
-                  href={project.apple}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
-                >
-                  <Apple size={24} />
-                </motion.a>
-              )}
-            </div>
-          )}
+          <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+            {hasLinks && (
+              <>
+                {project.github && (
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Github size={24} />
+                  </motion.a>
+                )}
+                {project.live && (
+                  <motion.a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <ExternalLink size={24} />
+                  </motion.a>
+                )}
+                {project.apple && (
+                  <motion.a
+                    href={project.apple}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <Apple size={24} />
+                  </motion.a>
+                )}
+              </>
+            )}
+
+            <motion.button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: "instant" as ScrollBehavior,
+                });
+                navigate(`/projects/${project.slug}`);
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="p-4 rounded-full bg-black/80 backdrop-blur-sm border border-lime-400/50 text-lime-400 hover:text-lime-300 transition-colors"
+              aria-label="Open project details"
+              title="More"
+            >
+              <MoreHorizontal size={24} />
+            </motion.button>
+          </div>
         </div>
 
         <div className="relative p-6">
@@ -187,6 +214,7 @@ const projectsData: Project[] = [
   {
     title: "Arc Cycle",
     descriptionKey: "arcCycle",
+    slug: "arc-cycle",
     image: "assets/arc-cycle-project.png",
     tags: [
       "React Native",
@@ -208,6 +236,7 @@ const projectsData: Project[] = [
   {
     title: "EstateUp {Work in Progress}",
     descriptionKey: "estateUp",
+    slug: "estateup",
     video: "assets/placeholder.mp4",
     tags: [
       "React",
@@ -229,6 +258,7 @@ const projectsData: Project[] = [
   {
     title: "Bleroy's Life",
     descriptionKey: "bleroy's life",
+    slug: "bleroys-life",
     image: "assets/l'inattendu.png",
     video: "assets/bleroylife2.mp4",
     tags: ["React", "Vite", "TypeScript", "Tailwind CSS", "Motion", "Radix UI"],
@@ -239,6 +269,7 @@ const projectsData: Project[] = [
   {
     title: "L'inattendu",
     descriptionKey: "linattendu",
+    slug: "linattendu",
     image: "assets/l'inattendu.png",
     tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite"],
     featured: false,
@@ -248,6 +279,7 @@ const projectsData: Project[] = [
   {
     title: "Aquapro",
     descriptionKey: "aquapro",
+    slug: "aquapro",
     image: "assets/aquapro.png",
     tags: ["TypeScript", "React", "TailwindCSS", "Vercel", "Vite"],
     featured: false,
@@ -257,6 +289,7 @@ const projectsData: Project[] = [
   {
     title: "Street Shop",
     descriptionKey: "streetshop",
+    slug: "streetshop",
     image: "assets/streetshop.png",
     tags: [
       "TypeScript",
@@ -278,6 +311,7 @@ const projectsData: Project[] = [
   {
     title: "Bouncing Balls",
     descriptionKey: "bouncingBalls",
+    slug: "bouncing-balls",
     image: "assets/bouncing-balls.png",
     tags: ["Python", "Pygame", "Algorithme", "Physique", "Animation", "Fun"],
     featured: false,
@@ -287,6 +321,7 @@ const projectsData: Project[] = [
   {
     title: "QueryTest",
     descriptionKey: "querytest",
+    slug: "querytest",
     image: "assets/queryIA.png",
     tags: [
       "TypeScript",

@@ -16,6 +16,7 @@ import {
 } from "../data/projects";
 import { ImageWithFallback } from "../components/fallback/ImageWithFallback";
 import { ParticleBackground } from "../components/ParticleBackground";
+import { LanguageSwitcher } from "../components/LanguageSwitcher";
 
 const categories: (ProjectCategory | "all")[] = [
   "all",
@@ -207,32 +208,36 @@ export function ProjectsPage() {
               </span>
             </Link>
 
-            <div className="relative">
-              <button
-                onClick={() => setFilterOpen(!filterOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-full border border-lime-400/30 text-lime-400 hover:bg-lime-400/10 transition-all md:hidden"
-              >
-                <Filter size={16} />
-                <span className="text-sm">
-                  {categoryLabels[activeFilter][lang]}
-                </span>
-              </button>
+            <div className="flex items-center gap-4">
+              <div className="relative">
+                <button
+                  onClick={() => setFilterOpen(!filterOpen)}
+                  className="flex items-center gap-2 px-4 py-2 rounded-full border border-lime-400/30 text-lime-400 hover:bg-lime-400/10 transition-all md:hidden"
+                >
+                  <Filter size={16} />
+                  <span className="text-sm">
+                    {categoryLabels[activeFilter][lang]}
+                  </span>
+                </button>
 
-              <div className="hidden md:flex items-center gap-2">
-                {categories.map((cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveFilter(cat)}
-                    className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
-                      activeFilter === cat
-                        ? "bg-gradient-to-r from-lime-400 to-cyan-400 text-black"
-                        : "border border-white/10 text-gray-400 hover:border-lime-400/30 hover:text-lime-400"
-                    }`}
-                  >
-                    {categoryLabels[cat][lang]}
-                  </button>
-                ))}
+                <div className="hidden md:flex items-center gap-2">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setActiveFilter(cat)}
+                      className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all ${
+                        activeFilter === cat
+                          ? "bg-gradient-to-r from-lime-400 to-cyan-400 text-black"
+                          : "border border-white/10 text-gray-400 hover:border-lime-400/30 hover:text-lime-400"
+                      }`}
+                    >
+                      {categoryLabels[cat][lang]}
+                    </button>
+                  ))}
+                </div>
               </div>
+
+              <LanguageSwitcher className="border-l border-lime-400/30 pl-4" />
             </div>
           </div>
 

@@ -122,6 +122,7 @@
     },
     "aquapro": {
       "description": "Professional showcase website for AquaPro, a trusted plumber in Montpellier and its metropolitan area. The site presents all services (24/7 emergency repairs, leak detection, water heaters, sanitary, unclogging, renovation), highlights the company's strengths (15 years of experience, 500+ satisfied clients, 30-min response time) and makes it easy to get in touch. Modern, responsive interface optimized for local SEO.",
+      "short": "Professional website for a plumber in Montpellier, built to showcase services and make getting in touch fast and easy.",
       "services_title": "Services Showcased",
       "services_items": "Emergency Repairs — Fast 24/7 response for emergencies: leaks, clogged pipes, water heater breakdowns|Leak Repair — Detection and repair using cutting-edge technology to locate hidden leaks|Water Heaters — Installation, repair and maintenance of electric, gas or thermodynamic water heaters|Sanitary — Full installation and renovation of bathrooms, toilets, sinks and sanitary equipment|Unclogging — Pipe, sink and toilet unclogging with hydro-jetting and camera inspection|Renovation — Complete plumbing renovation, code compliance and system modernization",
       "sections_title": "Site Sections",

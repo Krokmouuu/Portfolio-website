@@ -239,7 +239,51 @@
   },
   "reviews": {
     "title": "Avis",
-    "subtitle": "Ce que mes clients disent de mon travail"
+    "subtitle": "Ce que mes clients disent de mon travail",
+    "items": [
+      {
+        "name": "Anthony",
+        "rating": 5,
+        "comment": "Réactivité et capacité d'adaptation remarquables. La deadline était irréaliste : il a su se rendre disponible pour un entretien en moins de 48h, avec le rendu du test technique. Il a livré très efficacement et s'est très bien intégré malgré le décalage horaire. 20/10",
+        "date": "28 mars 2026",
+        "project": "Medical AI Startup"
+      },
+      {
+        "name": "*********",
+        "rating": 4,
+        "comment": "Benoit s'est bien intégré à l'équipe et a fait preuve d'un bon esprit d'initiative en proposant des idées intéressantes et innovantes.",
+        "date": "17 févr. 2025",
+        "project": "MNGRS.AI"
+      },
+      {
+        "name": "Adrien",
+        "rating": 5,
+        "comment": "Benoit a été super réactif et à l'écoute de nos besoins pour notre garage familial. Il a tout de suite compris ce qu'on attendait et nous a apporté des solutions efficaces. Son professionnalisme et sa gentillesse ont vraiment fait la différence.",
+        "date": "17 mars 2025",
+        "project": "Le Garage"
+      },
+      {
+        "name": "*********",
+        "rating": 4.5,
+        "comment": "Benoit a proposé un design très rapidement et nous a conseillé tout au long du projet. Une fois le site refait et le référencement mis en place, il a généré des dizaines de visites et de réservations dès le deuxième jour après sa mise en ligne.",
+        "date": "12 oct. 2024",
+        "project": "L'inattendu"
+      },
+      {
+        "name": "Utilisateur Arc Cycle",
+        "rating": 5,
+        "comment": "Application clean et bien travaillée, la meilleure que j'ai pu essayer dans le genre habitudes et motivations, hâte de voir la suite !",
+        "date": "12 déc. 2025",
+        "project": "Arc Cycle"
+      },
+      {
+        "name": "Julien",
+        "rating": 4,
+        "comment": "Benoit nous a permis de migrer notre site web sur un nouveau langage et une nouvelle plateforme. Il a été très professionnel et a su s'adapter à nos besoins.",
+        "date": "30 juil. 2025",
+        "project": "Phenix"
+      }
+    ]
   },
   "services": {
     "title": "Services",

@@ -238,7 +238,51 @@
   },
   "reviews": {
     "title": "Reviews",
-    "subtitle": "What my clients say about my work"
+    "subtitle": "What my clients say about my work",
+    "items": [
+      {
+        "name": "Anthony",
+        "rating": 5,
+        "comment": "Benoit showed remarkable responsiveness and adaptability. The deadline was short almost unrealistic: he made himself available for an interview in under 48 hours, with the completed technical assignment. He delivered very efficiently and integrated well despite the time difference.",
+        "date": "Mar 28, 2026",
+        "project": "Medical AI Startup"
+      },
+      {
+        "name": "*********",
+        "rating": 4,
+        "comment": "Benoit integrated well with the team and showed strong initiative by proposing interesting and innovative ideas.",
+        "date": "Feb 17, 2025",
+        "project": "MNGRS.AI"
+      },
+      {
+        "name": "Adrien",
+        "rating": 5,
+        "comment": "Benoit was extremely responsive and attentive to our needs for our family garage. He immediately understood what we wanted and delivered effective solutions. His professionalism and kindness truly made the difference.",
+        "date": "Mar 17, 2025",
+        "project": "Le Garage"
+      },
+      {
+        "name": "*********",
+        "rating": 4.5,
+        "comment": "Benoit delivered a design very quickly and guided us throughout the project. Once the website was revamped and SEO was set up, it generated dozens of visits and bookings starting on the second day after launch.",
+        "date": "Oct 12, 2024",
+        "project": "L'inattendu"
+      },
+      {
+        "name": "Arc Cycle user",
+        "rating": 5,
+        "comment": "Clean, well-crafted app — the best I’ve tried for habits and motivation. Can’t wait to see what’s next!",
+        "date": "Dec 12, 2025",
+        "project": "Arc Cycle"
+      },
+      {
+        "name": "Julien",
+        "rating": 4,
+        "comment": "Benoit helped us migrate our website to a new language and a new platform. He was highly professional and adapted to our needs.",
+        "date": "Jul 30, 2025",
+        "project": "Phenix"
+      }
+    ]
   },
   "services": {
     "title": "Services",

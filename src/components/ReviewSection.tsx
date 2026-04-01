@@ -2,59 +2,18 @@ import { ReviewCard } from "./ReviewCard";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 
-const reviews = [
-  {
-    name: "Anthony",
-    rating: 5,
-    comment:
-      "Benoit a fait preuve d'une réactivité et d'une capacité d'adaptation extraordinaires. Je l'ai contacté pour un projet à la deadline presque irréalisable : il a su se rendre disponible et livrer en seulement 48h malgré le décalage horaire. Je recommande 20/10.",
-    date: "28 mars 2026",
-    project: "Medical AI Startup",
-  },
-  {
-    name: "*********",
-    rating: 4,
-    comment:
-      "Benoit s'est bien intégré à l'équipe et a fait preuve d'un bon esprit d'initiative en proposant des idées intéressantes et innovantes.",
-    date: "17 févr. 2025",
-    project: "MNGRS.AI",
-  },
-  {
-    name: "Adrien",
-    rating: 5,
-    comment:
-      "Benoit a été super réactif et à l'écoute de nos besoins pour notre garage familial. Il a tout de suite compris ce qu'on attendait et nous a apporté des solutions efficaces. Son professionnalisme et sa gentillesse ont vraiment fait la différence.",
-    date: "17 mars 2025",
-    project: "Le Garage",
-  },
-  {
-    name: "*********",
-    rating: 4.5,
-    comment:
-      "Benoit a proposé un design très rapidement et nous a conseillé tout au long du projet. Une fois le site refait et le référencement mis en place, il a généré des dizaines de visites et de réservations dès le deuxième jour après sa mise en ligne.",
-    date: "12 oct. 2024",
-    project: "L'inattendu",
-  },
-  {
-    name: "Utilisateur Arc Cycle",
-    rating: 5,
-    comment:
-      "Application clean et bien travaillée, la meilleure que j'ai pu essayer dans le genre habitudes et motivations, hâte de voir la suite !",
-    date: "12 déc. 2025",
-    project: "Arc Cycle",
-  },
-  {
-    name: "Julien",
-    rating: 4,
-    comment:
-      "Benoit nous a permis de migrer notre site web sur un nouveau langage et une nouvelle plateforme. Il a été très professionnel et a su s'adapter à nos besoins.",
-    date: "30 juil. 2025",
-    project: "Phenix",
-  },
-];
+type Review = {
+  name: string;
+  rating: number;
+  comment: string;
+  date: string;
+  project: string;
+};
 
 export function ReviewsSection() {
   const { t } = useTranslation();
+  const reviewsRaw = t("reviews.items", { returnObjects: true }) as unknown;
+  const reviews: Review[] = Array.isArray(reviewsRaw) ? (reviewsRaw as Review[]) : [];
   // Duplicate reviews for infinite scroll effect
   const duplicatedReviews = [...reviews, ...reviews, ...reviews];
 

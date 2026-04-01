@@ -44,6 +44,10 @@
     "title": "Experience",
     "currently": "Currently",
     "jobs": {
+      "medAiHiring": {
+        "title": "Full Stack Developer",
+        "description": "Built a medical AI system and the associated website / medical interface, with a focus on fast iteration, reliability, and a clear user experience."
+      },
       "estateUp": {
         "title": "Founder & Full Stack Developer",
         "description": "Development of a web application for AI-powered real estate photo enhancement: virtual home staging, blue sky, retouches. Modern stack (React, TypeScript, Django, Stripe, Supabase) with ultra-realistic rendering and a simple user experience in just a few clicks."
@@ -51,10 +55,6 @@
       "arcCycle": {
         "title": "Founder & Developer",
         "description": "Creation of a mobile application with habit tracking, random daily challenges, a motivating gamification system, and advanced statistics to track your progress."
-      },
-      "iLoveNice": {
-        "title": "Sales Associate",
-        "description": "Customer service in a souvenir shop. Sales management, payments and inventory tracking. Multilingual communication with international customers."
       },
       "mngrsAi": {
         "title": "Full Stack Developer",

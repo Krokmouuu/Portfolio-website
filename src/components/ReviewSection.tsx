@@ -4,7 +4,15 @@ import { useTranslation } from "react-i18next";
 
 const reviews = [
   {
-    name: "Thomas",
+    name: "Anthony",
+    rating: 5,
+    comment:
+      "Benoit a fait preuve d'une réactivité et d'une capacité d'adaptation extraordinaires. Je l'ai contacté pour un projet à la deadline presque irréalisable : il a su se rendre disponible et livrer en seulement 48h malgré le décalage horaire. Je recommande 20/10.",
+    date: "28 mars 2026",
+    project: "Medical AI Startup",
+  },
+  {
+    name: "*********",
     rating: 4,
     comment:
       "Benoit s'est bien intégré à l'équipe et a fait preuve d'un bon esprit d'initiative en proposant des idées intéressantes et innovantes.",

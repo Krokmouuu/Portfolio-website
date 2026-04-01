@@ -6,6 +6,14 @@ import { useTranslation } from "react-i18next";
 
 const experiencesData = [
   {
+    titleKey: "medAiHiring",
+    company: "Medical AI Startup",
+    location: "USA",
+    period: "2026 - 2026",
+    image: "/assets/medicalAI.jpg",
+    tags: ["React", "Tailwind", "Next.js", "Nest.js"],
+  },
+  {
     titleKey: "estateUp",
     company: "EstateUp",
     location: "Nice, France",
@@ -45,22 +53,6 @@ const experiencesData = [
       "RevenueCat",
       "App Store Connect",
       "Mixpanel",
-    ],
-  },
-  {
-    titleKey: "iLoveNice",
-    company: "I ❤️ Nice",
-    location: "Nice, France",
-    period: "2025 - 2025",
-    image: "/assets/nice.jpg",
-    tags: [
-      "Anglais",
-      "Service",
-      "Accueil",
-      "Conseil",
-      "Vente",
-      "Gestion",
-      "Responsabilité",
     ],
   },
   {

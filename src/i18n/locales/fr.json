@@ -44,6 +44,10 @@
     "title": "Expérience",
     "currently": "Actuellement",
     "jobs": {
+      "medAiHiring": {
+        "title": "Full Stack Developpeur",
+        "description": "Développement d’un système d’IA appliqué au médical et conception du site web / interface médicale associée, avec un focus sur une itération rapide, la fiabilité et une expérience utilisateur claire."
+      },
       "estateUp": {
         "title": "Fondateur et Développeur Full Stack",
         "description": "Développement d'une application web d'amélioration de photos immobilières par IA : home staging virtuel, ciel bleu, retouches. Stack moderne (React, TypeScript, Django, Stripe, Supabase) avec un rendu ultra réaliste et une expérience utilisateur simple en quelques clics."
@@ -51,10 +55,6 @@
       "arcCycle": {
         "title": "Fondateur et Développeur",
         "description": "Création d'une application mobile avec un suivi d'habitudes, des défis quotidiens aléatoires, un système de gamification motivant, et des statistiques avancées pour suivre ta progression."
-      },
-      "iLoveNice": {
-        "title": "Vendeur",
-        "description": "Accueil et conseil clientèle dans un magasin de souvenirs. Gestion des ventes, encaissements et suivi de l'inventaire. Communication multilingue avec une clientèle internationale."
       },
       "mngrsAi": {
         "title": "Full Stack Developpeur",

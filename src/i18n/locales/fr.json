@@ -67,10 +67,6 @@
       "freelance": {
         "title": "Full Stack Developpeur Freelance",
         "description": "Occasionnellement en parallèle de mes études, j'ai travaillé comme développeur freelance pour différents clients, principalement des sites vitrines et des boutiques e-commerce personnelles."
-      },
-      "gaming": {
-        "title": "Joueur semi-professionnel de jeu vidéo",
-        "description": "Grand passionné de jeux vidéo, j'ai participé à des centaines de tournois compétitifs sur 6 jeux différents allant de la division 2 à la division 1, développant ainsi des compétences en stratégie, analyse, travail d'équipe, leadership en tant que capitaine, prise de décision rapide et adaptation."
       }
     }
   },
@@ -99,6 +95,18 @@
       "transforms_items": "Home staging virtuel — Meubler un espace vide avec des meubles réalistes générés par IA|Amélioration du ciel — Remplacer un ciel gris par un ciel bleu lumineux|Éclaircissement — Améliorer la luminosité d'une pièce sombre|Désencombrement — Retirer les objets superflus pour épurer l'image|Combinaisons — Désencombrer + meubler, désencombrer + rénover, ou les trois à la fois|Changement de décoration — Modifier le style déco : moderne, scandinave, industriel, classique, minimaliste, bohème. Applicable à salon, cuisine, chambre, salle de bain, bureau ou salle à manger",
       "learned_title": "Ce que j'ai appris",
       "learned_items": "Architecture Full-Stack — Conception d'une app complète avec un frontend React/TypeScript et un backend Django/Python communiquant via API REST|Intégration IA — Pilotage de modèles d'intelligence artificielle pour la génération et transformation d'images en temps réel|Stripe — Mise en place d'un système de crédits avec paiement, gestion des packs et suivi de la consommation|Supabase & PostgreSQL — Base de données relationnelle, authentification, stockage de fichiers et temps réel|Gestion d'organisations — Système multi-utilisateurs avec rôles, permissions et crédits partagés entre membres d'une équipe|Sentry — Monitoring d'erreurs en production côté frontend et backend|Déploiement — CI/CD avec Vercel pour le front et infrastructure backend, gestion des variables d'environnement et migrations"
+    },
+    "jsonHelper": {
+      "description": "JSON Helper permet de visualiser, explorer et modifier du JSON instantanément. Le texte brut devient un graphe interactif : on voit la structure et les valeurs sans se perdre dans les accolades. Que ce soit pour déboguer une réponse d'API, relire un fichier de configuration ou parcourir un jeu de données, l'outil offre une représentation visuelle en temps réel pour se concentrer sur l'essentiel.",
+      "short": "Visualisez, explorez et éditez du JSON en direct : graphe d'arbre interactif, éditeur synchronisé, modes split / code / graphe, recherche, undo/redo et session sauvegardée localement.",
+      "features_title": "Fonctionnalités",
+      "features_items": "Arbre interactif — Le JSON est rendu comme un graphe de nœuds navigable avec des relations parent-enfant claires|Édition en direct — Modifier valeurs, clés et structure depuis le graphe ou l'éditeur de code ; tout se synchronise instantanément|Modes d'affichage — Split, éditeur seul ou visualiseur seul selon votre façon de travailler|Recherche et filtre — Retrouver rapidement une clé ou une valeur dans toute la structure|Annuler / refaire — Chaque action est enregistrée et entièrement réversible|Zoom et pan — Parcourir de gros documents avec zoom et déplacement fluides|Layouts — Arborescence horizontale ou verticale selon la forme des données|Session persistante — Le travail est sauvegardé localement pour ne rien perdre",
+      "audience_title": "Pour qui ?",
+      "audience_items": "Développeurs — Débogage de réponses API ou de fichiers de config|Ingénieurs QA — Inspection de payloads de test|Analystes — Exploration de jeux de données structurés|Toute personne — Qui manipule du JSON et veut une vue plus claire que le texte brut",
+      "gettingStarted_title": "Pour commencer",
+      "gettingStarted_items": "Collez ou saisissez votre JSON dans l'éditeur — la visualisation se met à jour en temps réel. C'est tout.",
+      "learned_title": "Ce que j'ai appris",
+      "learned_items": "Visualisation de données — Représenter un arbre JSON comme graphe interactif avec zoom, pan et navigation|Synchronisation d'état — Garder cohérents éditeur texte et vue graphique en temps réel|UX outil dev — Modes d'affichage multiples, recherche, historique undo/redo et persistance locale pour un flux de travail fluide|Stack web — Application Vite, React et TypeScript, déployée sur Vercel"
     },
     "bleroy's life": {
       "description": "Bleroy's Life est une simulation interactive du Jeu de la vie de Conway en version web. Dessine à la main, place des formes classiques (gliders, pulsars, methuselahs…), lance la simulation à la vitesse que tu veux, zoome et navigue sur une grille de 1000×1000 cellules, puis sauvegarde tes créations en local dans le navigateur. Idéal pour découvrir le Jeu de la vie, tester des configurations ou simplement regarder évoluer des motifs.",

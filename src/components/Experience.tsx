@@ -110,21 +110,6 @@ const experiencesData = [
       "Stripe",
     ],
   },
-  {
-    titleKey: "gaming",
-    company: "",
-    location: "Online",
-    period: "2016 - 2024",
-    image: "assets/pro-scene.png",
-    tags: [
-      "Counter-Strike: Global Offensive",
-      "Overwatch",
-      "Fortnite",
-      "Call of Duty",
-      "World of Warcraft",
-      "League of Legends",
-    ],
-  },
 ];
 
 const isVideo = (src: string) => src.endsWith(".mp4") || src.endsWith(".webm");
@@ -229,11 +214,9 @@ export function Experience() {
                         style={
                           exp.company === "Arc Cycle"
                             ? { objectPosition: "center 57%" }
-                            : exp.titleKey === "gaming"
-                              ? { objectPosition: "center 55%" }
-                              : exp.company === "MNGRS.AI"
-                                ? { objectPosition: "center 65%" }
-                                : undefined
+                            : exp.company === "MNGRS.AI"
+                              ? { objectPosition: "center 65%" }
+                              : undefined
                         }
                       />
                     )}

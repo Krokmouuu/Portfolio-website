@@ -256,6 +256,22 @@ const projectsData: Project[] = [
     featured: true,
   },
   {
+    title: "JSON Helper",
+    descriptionKey: "jsonHelper",
+    slug: "json-helper",
+    image: "assets/jsonhelper.png",
+    tags: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Vercel",
+    ],
+    featured: false,
+    github: "https://github.com/Krokmouuu/JsonHelper",
+    live: "https://jsonhelper-five.vercel.app/",
+  },
+  {
     title: "Bleroy's Life",
     descriptionKey: "bleroy's life",
     slug: "bleroys-life",

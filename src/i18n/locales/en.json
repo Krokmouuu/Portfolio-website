@@ -67,10 +67,6 @@
       "freelance": {
         "title": "Full Stack Freelance Developer",
         "description": "Occasionally alongside my studies, I worked as a freelance developer for various clients, mainly showcase websites and personal e-commerce stores."
-      },
-      "gaming": {
-        "title": "Semi-professional Video Game Player",
-        "description": "Gaming enthusiast, I participated in hundreds of competitive tournaments across 6 different games from division 2 to division 1, developing skills in strategy, analysis, teamwork, leadership as captain, quick decision-making and adaptation."
       }
     }
   },
@@ -99,6 +95,18 @@
       "transforms_items": "Virtual Home Staging — Furnish an empty space with realistic AI-generated furniture|Sky Enhancement — Replace a grey sky with a bright blue sky|Brightening — Improve the lighting of a dark room|Decluttering — Remove unnecessary objects to clean up the image|Combinations — Declutter + furnish, declutter + renovate, or all three at once|Decor Change — Switch the decoration style: modern, Scandinavian, industrial, classic, minimalist, bohemian. Applicable to living room, kitchen, bedroom, bathroom, office or dining room",
       "learned_title": "What I Learned",
       "learned_items": "Full-Stack Architecture — Designing a complete app with a React/TypeScript frontend and Django/Python backend communicating via REST API|AI Integration — Driving artificial intelligence models for real-time image generation and transformation|Stripe — Building a credit system with payment, pack management and consumption tracking|Supabase & PostgreSQL — Relational database, authentication, file storage and real-time features|Organization Management — Multi-user system with roles, permissions and shared credits across team members|Sentry — Production error monitoring on both frontend and backend|Deployment — CI/CD with Vercel for the frontend and backend infrastructure, environment variable management and migrations"
+    },
+    "jsonHelper": {
+      "description": "JSON Helper lets you visualize, explore and edit JSON data instantly. Raw JSON becomes an interactive visual graph so you can focus on structure and values without getting lost in brackets. Whether you are debugging an API response, reviewing a configuration file or exploring a dataset, you get a real-time visual representation of your data.",
+      "short": "Visualize, explore and edit JSON in real time: interactive tree graph, synced editor, split / code / graph modes, search, undo/redo and locally persisted session.",
+      "features_title": "What it does",
+      "features_items": "Interactive tree visualization — JSON rendered as a navigable node graph with clear parent-child relationships|Live editing — Change values and keys from the graph or the built-in code editor; everything stays in sync instantly|Split, editor & visualizer modes — Side-by-side, code only or graph only|Search & filter — Quickly find any key or value across the structure|Undo / Redo — Every change is tracked and fully reversible|Zoom & pan — Move through large documents with smooth zoom and drag|Horizontal & vertical layouts — Switch tree orientation to fit your data|Persistent session — Work is saved locally so you do not lose progress",
+      "audience_title": "Who is it for?",
+      "audience_items": "Developers — Debugging API responses or config files|QA engineers — Inspecting test payloads|Data analysts — Exploring structured datasets|Anyone — Who works with JSON and wants a clearer view than raw text",
+      "gettingStarted_title": "Getting started",
+      "gettingStarted_items": "Paste or type your JSON into the editor — the visualization updates in real time. That is it.",
+      "learned_title": "What I learned",
+      "learned_items": "Data visualization — Representing JSON as an interactive graph with zoom, pan and navigation|State synchronization — Keeping a text editor and graph view consistent in real time|Developer-tool UX — Multiple layout modes, search, undo/redo stack and local persistence for a smooth workflow|Web stack — Vite, React and TypeScript app deployed on Vercel"
     },
     "bleroy's life": {
       "description": "Bleroy's Life is an interactive simulation of Conway's Game of Life as a web app. Draw by hand, place classic shapes (gliders, pulsars, methuselahs…), run the simulation at any speed, zoom and navigate a 1000×1000 cell grid, then save your creations locally in the browser. Perfect for discovering the Game of Life, testing configurations or simply watching patterns evolve.",

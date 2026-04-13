@@ -11,7 +11,15 @@ const experiencesData = [
     location: "USA",
     period: "2026 - 2026",
     image: "/assets/medicalAI.jpg",
-    tags: ["React", "Tailwind", "Next.js", "Nest.js"],
+    tags: [
+      "React",
+      "Tailwind",
+      "Next.js",
+      "Nest.js",
+      "LLM",
+      "PostgreSQL",
+      "Docker",
+    ],
   },
   {
     titleKey: "estateUp",

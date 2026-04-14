@@ -91,6 +91,7 @@ export const allProjects: ProjectData[] = [
     ],
     categories: ["web"],
     featured: true,
+    live: "https://estate-7uhaqvm9k-bleroy.vercel.app/home",
     sections: [
       { key: "howItWorks", icon: "🔄", items: true },
       { key: "dashboard", icon: "📊", items: true },

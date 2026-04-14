@@ -254,6 +254,7 @@ const projectsData: Project[] = [
       "Authentication",
     ],
     featured: true,
+    live: "https://estate-7uhaqvm9k-bleroy.vercel.app/home",
   },
   {
     title: "Alerte404",

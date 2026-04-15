@@ -91,7 +91,7 @@ export const allProjects: ProjectData[] = [
     ],
     categories: ["web"],
     featured: true,
-    live: "https://estate-up.vercel.app/dashboard",
+    live: "https://estate-up.vercel.app/home",
     sections: [
       { key: "howItWorks", icon: "🔄", items: true },
       { key: "dashboard", icon: "📊", items: true },

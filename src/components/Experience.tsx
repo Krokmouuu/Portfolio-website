@@ -8,7 +8,7 @@ const experiencesData = [
   {
     titleKey: "medAiHiring",
     company: "Medical AI Startup",
-    location: "USA",
+    location: "San Francisco, USA",
     period: "2026 - 2026",
     image: "/assets/medicalAI.jpg",
     tags: [
@@ -48,8 +48,7 @@ const experiencesData = [
     titleKey: "arcCycle",
     company: "Arc Cycle",
     location: "Nice, France",
-    period: "2025",
-    periodKey: "currently",
+    period: "2025 - 2026",
     image: "/assets/arc-cycle.png",
     tags: [
       "React Native",
@@ -101,8 +100,9 @@ const experiencesData = [
   {
     titleKey: "freelance",
     company: "",
-    location: "Nice, France",
-    period: "2022 - 2024",
+    location: "Home sweet home",
+    period: "2022",
+    periodKey: "currently",
     image: "/assets/wallpaper.jpeg",
     tags: [
       "Python",

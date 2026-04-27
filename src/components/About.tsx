@@ -6,9 +6,9 @@ import { useTranslation } from "react-i18next";
 const japanImage = "/assets/about-image.jpg";
 
 const statsData = [
-  { icon: Terminal, value: "14", labelKey: "projects" },
-  { icon: Zap, value: "3", labelKey: "experience" },
-  { icon: Trophy, value: "14", labelKey: "clients" },
+  { icon: Terminal, value: "15", labelKey: "projects" },
+  { icon: Zap, value: "4", labelKey: "experience" },
+  { icon: Trophy, value: "15", labelKey: "clients" },
 ];
 
 export function About() {
